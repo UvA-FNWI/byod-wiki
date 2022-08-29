@@ -47,6 +47,6 @@ Om Ubuntu te installeren met BitLocker aan moet de schijfruimte voor Ubuntu gecr
 
 ![Disk partitie verkleinen](../../assets/bitlocker-resize-partition.png)
 
-Hierna kan opnieuw worden opgestart en de installatie van Ubuntu kan worden uitgevoerd. Tijdens het partitioneren moet je niet voor de optie "Install Ubuntu alongside Windows Boot Manager" kiezen, maar voor de optie "something else". Maak dan een partitie in de vrije ruimte met als *mount point* `/`, en klik dan op "Install now" (als hier de optie "Restart" staat moet je daarop klikken - de installatie zal gewoon verder gaan).
+Hierna kan opnieuw worden opgestart en de installatie van Ubuntu kan worden uitgevoerd. Tijdens het partitioneren moet je niet voor de optie "Install Ubuntu alongside Windows Boot Manager" kiezen, maar voor de optie "something else". Maak dan een partitie in de vrije ruimte met als *mount point* `/`, en klik dan op "Install now".
 
 Als je Windows opstart via het opstartmenu van Ubuntu kan om de herstelsleutel gevraagd worden - voer deze desgevraagd in. Als het goed is wordt slechts eenmalig om de herstelsleutel gevraagd, hierna kan zonder problemen in Windows opgestart worden.
