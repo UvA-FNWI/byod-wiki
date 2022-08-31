@@ -21,6 +21,10 @@ Start Windows op, open het Settings scherm en onder about en klik op "Turn off" 
 
 ### Windows 11
 
+Afhankelijk van je Windows 11 versie kan het zijn dat je "BitLocker" of "Device encryption" gebruikt.
+
+## BitLocker
+
 In instellingen, zoek op 'BitLocker' en selecteer 'Manage BitLocker'.
 
 ![Zoeken op BitLocker in instellingen](../../assets/win11-settings-search-bitlocker.png)
@@ -28,6 +32,10 @@ In instellingen, zoek op 'BitLocker' en selecteer 'Manage BitLocker'.
 Zet vervolgens BitLocker uit:
 
 ![BitLocker uitzetten](../../assets/win11-bitlocker-turn-off.png)
+
+## Device encryption
+
+In instellingen, ga naar Privacy & Security > Device encryption en schakel de versleuteling hier uit.
 
 ## Installeren met BitLocker ingeschakeld
 ### Een kopie maken van de BitLocker-herstelsleutel
