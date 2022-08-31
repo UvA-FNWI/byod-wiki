@@ -62,6 +62,8 @@ Er zal je gevraagd worden om je toetsenbordindeling te kiezen. Als je gebruik wi
 
 ![Keyboard](../../assets/2204-keyboard.png)
 
+Als je wordt gevraagd om verbinding te maken met een Wi-Fi netwerk, kies ervoor om het niet te doen. Een internetverbinding is niet nodig en niet verbinden bespaart tijd.
+
 Het scherm daarna zal je vragen software van derden te installeren, vink deze aan. Waarschijnlijk wordt hier gevraagd wordt om een wachtwoord om Secure Boot te configureren. Dit wachtwoord heb je eenmalig nodig na de Ubuntu installatie bij "Perform MOK management". Het is niet het wachtwoord van je gebruikersaccount, het hoeft niet bijzonder veilig te zijn en je zult het wachtwoord hierna nooit meer nodig hebben.
 
 ![Software](../../assets/2204-software.png)
