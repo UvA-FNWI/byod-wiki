@@ -12,10 +12,10 @@ sudo apt-get install git
 
 ### macOS
 
-Git wordt standaard met de command line tools meegeleverd. Mocht je een nieuwere versie willen, dan kun je die installeren m.b.v. MacPorts:
+Installeer git met homebrew:
 
 ```
-sudo port install git
+brew install git
 ```
 
 ### Arch Linux

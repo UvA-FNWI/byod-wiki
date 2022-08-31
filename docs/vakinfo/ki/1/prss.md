@@ -28,9 +28,7 @@ Installeer [dev-lang/swi-prolog](http://packages.gentoo.org/package/dev-lang/swi
 ### macOS
 
 ```
-sudo port install swi-prolog
-```
-Of als je homebrew hebt
+Installeer prolog met homebrew:
 ```
 brew install swi-prolog
 ```
