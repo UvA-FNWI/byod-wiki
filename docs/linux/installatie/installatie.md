@@ -9,6 +9,9 @@ Zorg dat je USB stick nu aangesloten is.
 
 Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf deze USB-stick (in tegenstelling tot de interne SSD). Er zijn verschillende manieren om dit te doen. Hieronder staan 4 manieren beschreven, kies welke het makkelijkst lijkt. Mocht het niet lukken kun je een andere methode kiezen.
 
+!!! info "Welke boot optie moet ik hebben?"
+    Waarschijnlijk heet de goede optie "Ubuntu", "Linpus lite", "USB Disk", "USB HDD".
+
 1. **UEFI-opstartmenu**
     Veel laptops hebben een toets die je kan indrukken tijdens het opstarten, waardoor de laptop een opstartmenu geeft. In dit menu kan je selecteren van welk apparaat de laptop moet opstarten, in dit geval de USB-stick.
 
