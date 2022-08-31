@@ -37,15 +37,8 @@ Installeer:
 
 ### macOS
 
-```
-sudo port install go swi-prolog erlang haskell-platform
-```
+Installer go, prolog, erlang, haskell, GNU bash, GNU coreutils.
 
-Bash word behandelt vanuit de GNU implementatie, terwijl op macOS de "correcte" bsd implementatie draait. Hierdoor kan het voorkomen dat sommige dingen niet lekker werken, en dat je bepaalde "handige" flags en operators mist.
-Wil je hier alsnog gebruik van maken kan je bash en de GNU coreutils via macports installeren.
-```
-sudo port install bash coreutils
-```
 Let hierbij op dat alle gnu varianten de letter g als prefix hebben deze alias is er niet op de GNU/linux installaties.
 
 ### openSUSE
