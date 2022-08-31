@@ -37,7 +37,7 @@ Zet de laptop uit en weer aan, als het goed is wordt dan de rtl8821ce-driver gel
 
 * Start windows op en open een opdrachtprompt (cmd) als administrator
 * Voer `bcdedit /set {current} safeboot minimal` uit
-* Reboot naar de UEFI-instellingen. Verander hier de modus van RAID naar AHCI (als de optie hiervoor onzichtbaar is, kan het nodig zijn om Ctrl-S in te drukken terwijl de ''main tab'' van de bios setup zichtbaar is. Dit is vaak zo bij Acer.).
+* Reboot naar de UEFI-instellingen. Verander hier de modus van RAID naar AHCI (als de optie hiervoor onzichtbaar is, kan het nodig zijn om Ctrl-S in te drukken terwijl de ''main tab'' van de bios setup zichtbaar is. Dit is vaak zo bij Acer.). Bij Dell staat het onder System Configuration > SATA Operation > AHCI.
 * Boot Windows weer, start weer een opdrachtprompt op als administrator en voer het volgende uit `bcdedit /deletevalue {current} safeboot`
 * Nu zou de Linux-installer de disk wel moeten herkennen.
 
