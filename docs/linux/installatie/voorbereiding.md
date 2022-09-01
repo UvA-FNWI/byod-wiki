@@ -3,6 +3,13 @@ Je zal een USB-stick van ten minste 4 GiB nodig hebben. Je laptop zal meerdere k
 ## Troubleshooting
 Gaat er iets mis tijdens of na de installatie? Kijk dan naar [de pagina met veelvoorkomende problemen](./problemen.md), vraag om hulp of stuur (als je thuis bent) een mailtje naar `laptops-fnwi@uva.nl`. Tijdens de introductiedag is er een ruimte beschikbaar voor als de installatie uitloopt, als je niet weet waar dit is kan je dit aan een assistent vragen.
 
+## macOS
+
+!!! warning "macOS wordt niet ondersteund"
+    MacOS wordt officieel niet ondersteund door de UvA. Hoewel de meeste vakken prima in macOS gedaan kunnen worden, ben je vaak op jezelf aangewezen om het werkend te krijgen. Er zullen niet altijd instructies beschikbaar zijn voor het installeren van de benodigde software voor macOS, waar dit voor Ubuntu wel het geval is. Sommige vakken moeten misschien in een Linux virtuele machine gedaan worden. In zeldzame gevallen is het helemaal niet mogelijk bepaalde practica op macOS te doen, vooral als je een nieuwere ARM MacBook hebt.
+
+Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS gebruiken zonder Linux te installeren.
+
 ## USB-voorbereiding
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
 Zorg allereerst dat je een lege USB-stick van minstens 4 GiB hebt, en sluit deze aan op je computer.

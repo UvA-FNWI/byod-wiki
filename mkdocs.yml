@@ -49,13 +49,6 @@ theme:
 # Manual navigation to change ordering and use correct capitalization in words like macOS
 nav:
   - 'Hoofdpagina': 'index.md'
-  - 'Software':
-    - 'Software': 'software/index.md'
-    - 'Git': 'software/git.md'
-    - 'Python': 'software/python.md'
-    - 'LaTeX': 'software/latex.md'
-    - 'Matlab': 'software/matlab.md'
-    - 'Thunderbird (e-mail)': 'software/thunderbird.md'
   - 'Linux':
     - 'Linux': 'linux/index.md'
     - 'Eduroam': 'linux/eduroam.md'
@@ -77,6 +70,13 @@ nav:
     - 'Eduroam': 'mac-os/eduroam.md'
     - 'Uva VPN': 'mac-os/vpn.md'
     - 'Installatie': 'mac-os/installatie.md'
+  - 'Software':
+    - 'Software': 'software/index.md'
+    - 'Git': 'software/git.md'
+    - 'Python': 'software/python.md'
+    - 'LaTeX': 'software/latex.md'
+    - 'Matlab': 'software/matlab.md'
+    - 'Thunderbird (e-mail)': 'software/thunderbird.md'
   - 'Vakinformatie':
     - 'Vakinformatie': 'vakinfo/index.md'
     - 'Informatica':

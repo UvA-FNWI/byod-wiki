@@ -32,8 +32,16 @@ Zet de laptop uit en weer aan, als het goed is wordt dan de rtl8821ce-driver gel
 
 ## Intel RST / Disk in RAID-modus / Linux ziet de disk niet
 
+!!! warning "Versleuteling"
+    Controleer eerst goed of je [BitLocker](./bitlocker.md) uit hebt staan!
+
 !!! warning "Inloggen in safe mode"
     In *safe mode* moet ingelogd worden zonder Windows Hello, dus men moet het wachtwoord van hun Microsoft-account (of lokaal account, als ze dat hebben) kennen!
+
+!!! warning "Optane / RAID"
+    De optie heet vaak "RAID" ook al gaat het om een enkele disk. Sommige laptops gebruiken wel echt RAID of tiered-storage. Bijvoorbeeld, een kleine Intel Optane disk voor het versnellen van een grotere SSD/HDD. In dit geval kan het uitzetten van RST ertoe leiden dat je data volledig onleesbaar wordt. Zorg dat je een goede backup hebt (in dit geval op file of filesystem niveau, niet op block niveau!).
+
+We raden je aan om hulp te vragen bij deze stappen, tenzij je zelf écht weet wat je doet. Anders is het een goede manier om je backups te testen.
 
 * Start windows op en open een opdrachtprompt (cmd) als administrator
 * Voer `bcdedit /set {current} safeboot minimal` uit

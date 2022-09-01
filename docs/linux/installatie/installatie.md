@@ -30,6 +30,8 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
 
     Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
 
+    Heb je niet de "Use a device" optie? Dan gebruikt je laptop waarschijnlijk legacy boot, niet UEFI boot. Vraag iemand van de laptophelpdesk om hulp.
+
 3. **UEFI firmware settings, via toets bij opstarten**
     In de UEFI firmware settings kan je de opstartvolgorde veranderen. In tegenstelling tot het opstartmenu waar je eenmalig een apparaat kiest, stel je in de UEFI firmware settings permanent[^1] een apparaat in om van op te starten.
 
@@ -45,6 +47,8 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
     Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de Shift toets ingedrukt terwijl je op de optie om te herstarten klikt. Er verschijnt dan een menu.
 
     Om naar de UEFI-configuratie te gaan, klik op `Troubleshoot`, gevolgd door `Advanced Settings`, en dan tenslotte `UEFI Firmware Settings`. De computer zal dan herstarten, waarna het configuratiescherm verschijnt.
+
+    Heb je niet de "UEFI Firmware Settings" optie? Dan gebruikt je laptop waarschijnlijk legacy boot, niet UEFI boot. Vraag iemand van de laptophelpdesk om hulp.
 
 Zodra je laptop is opgestart vanaf de USB-stick krijg je een keuzemenu te zien, met verschillende opties, kies hier de optie `Try or Install Ubuntu` (gaat ook automatisch na een aantal seconden). Als het hierna mis gaat kan je proberen geforceerd opnieuw op te starten en `Ubuntu (safe graphics)` te selecteren in plaats van `Ubuntu`.
 
@@ -69,15 +73,17 @@ Het scherm daarna zal je vragen software van derden te installeren, vink deze aa
 ![Software](../../assets/2204-software.png)
 
 Mogelijk krijg je hierna een waarschuwing scherm met een melding dat hij Ubuntu niet kan installeren ivm BitLocker of Intel RST. In het geval van BitLocker, zie de [BitLocker-pagina](./bitlocker.md).
-In het geval van Intel RST, vraag om hulp om dit uit te schakelen.
+In het geval van Intel RST staan er instructies op de '[Veelvoorkomende problemen](./problemen.md)'-pagina, maar we raden sterk aan om hulp te vragen.
 
 ![BitLocker](../../assets/2204-bitlocker.png)
 
 In het scherm daarna zal je gevraagd worden hoe je Ubuntu precies wilt installeren. Selecteer hier de optie "Install Ubuntu alongside Windows Boot Manager".
 
+Als je deze optie niet hebt (dus alleen "erase disk" en "something else"), gebruik je misschien geen UEFI of is er wat anders aan de hand. Vraag om hulp aan iemand van de laptophelpdesk. Kies in ieder geval niet voor "erase disk" tenzij je zeker weet dat je al je huidige data binnen Windows wilt verwijderen.
+
 ![Installation type](../../assets/2004-installationtype.png)
 
-In het scherm erna kun je kiezen op welke harde schijf je Linux Ubuntu gaat installeren, en hoeveel ruimte je wilt toewijzen aan beide besturingssystemen. De installatiewizard zal je dan vragen of je zeker weet dat je wilt doen, omdat de bewerkingen die gedaan zullen worden niet ongedaan gemaakt kunnen worden. Bevestig dat je dit wilt doen. Zorg ervoor dat je Ubuntu voldoende ruimte geeft, aangezien het een uitdaging is dit later te op te hogen. Ga ervan uit dat je voor software uiteindelijk tussen de twintig en veertig gigabyte nodig gaat hebben, en ook nog gebruikersbestanden kwijt wilt. De basisinstallatie van Ubuntu neemt rond de zeven gigabyte in beslag. Het is dus verstandig om Ubuntu 50-100GB te geven afhankelijk van hoeveel capaciteit je over hebt.
+In het scherm erna kun je kiezen op welke schijf je Linux Ubuntu gaat installeren, en hoeveel ruimte je wilt toewijzen aan beide besturingssystemen. De installatiewizard zal je dan vragen of je zeker weet dat je wilt doen, omdat de bewerkingen die gedaan zullen worden niet ongedaan gemaakt kunnen worden. Bevestig dat je dit wilt doen. Zorg ervoor dat je Ubuntu voldoende ruimte geeft, aangezien het een uitdaging is dit later te op te hogen. Ga ervan uit dat je voor software uiteindelijk tussen de twintig en veertig gigabyte nodig gaat hebben, en ook nog gebruikersbestanden kwijt wilt. De basisinstallatie van Ubuntu neemt rond de zeven gigabyte in beslag. Het is dus verstandig om Ubuntu 50-100GB te geven afhankelijk van hoeveel capaciteit je over hebt.
 
 !!! info "Laptops met meerdere schijven"
     Ubuntu vraagt niet naar welke schijf de bootloader geïnstalleerd moet worden en, als je al een bestaand besturingssyteem met EFI partitie op een andere schijf hebt staan, wordt deze mogelijk overschreven! Dit is meestal geen probleem, het is juist handig. Stel je hebt Windows op schijf A en je installeert Ubuntu naar schijf B, dan wil je de GRUB op schijf A hebben zodat als je laptop vanaf schijf A opstart, GRUB je laat kiezen tussen Windows en Ubuntu. Mocht je niet willen dat je bootloader wordt overschreven, zodat je via je UEFI boot menu tussen EFI partities op de twee schijven kan kiezen, let hier wel op.
@@ -112,10 +118,14 @@ Hierna kies je de optie "Reboot".
 Vervolgens kom je als normaal in GRUB.
 
 ## GRUB
+
+!!! hint "Start je niet op naar GRUB?"
+    Het kan zijn dat je in je UEFI firmware settings de boot priority moet veranderen; "ubuntu" in plaats van "Windows Boot Manager".
+
 Je komt na het opstarten als het goed is in GRUB, waar je kunt kiezen om Ubuntu of Windows op te starten. Als je Ubuntu kiest, of lang genoeg wacht, start Ubuntu op. Je kunt nu inloggen en krijgt een "What's new in Ubuntu"-scherm te zien. Hierin wordt gevraagd of je Livepatch wilt aanzetten (kan, maar hoeft niet) en of je enkele systeeminformatie door wilt sturen naar Canonical om Ubuntu te verbeteren. Je kan even naar het rapport kijken; het bevat geen gevoelige informatie, maar voel je vrij het uit te zetten.
 
 ## Software installatie
 
-Nu Ubuntu successvol is geïnstalleerd, kan je de [shell script](./shell-script.md) gebruiken om benodigde software te installeren.
+Nu Ubuntu succesvol is geïnstalleerd, kan je de [shell script](./shell-script.md) gebruiken om benodigde software te installeren.
 
 [^1]: Als je de USB-stick uit je laptop haalt, zal je laptop hoogstwaarschijnlijk automatisch de opstartvolgorde aanpassen zodat de SSD weer het primaire opstartapparaat is.
