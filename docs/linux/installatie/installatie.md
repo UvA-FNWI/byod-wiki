@@ -28,7 +28,7 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
 
     Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de Shift toets ingedrukt terwijl je op de optie om te herstarten klikt. Er verschijnt dan een menu.
 
-    Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
+    Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Troubleshooting` (Problemen Oplossen), dan Geavanceerde opties, `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
 
     Heb je niet de "Use a device" optie? Dan gebruikt je laptop waarschijnlijk legacy boot, niet UEFI boot. Vraag iemand van de laptophelpdesk om hulp.
 

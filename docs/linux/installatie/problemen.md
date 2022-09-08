@@ -143,6 +143,8 @@ sudo prime-select intel
 
 Windows gebruikt lokale tijd voor de hardware klok van je laptop terwijl Linux UTC gebruikt. Je kan Linux instellen om lokale tijd te gebruiken, **of** Windows instellen om UTC tijd te gebruiken. Niet beide opties, dan heb je weer hetzelfde probleem.
 
+Linux kan zich beter aanpassen dan Windows, dus we raden aan voor optie 1 te gaan tenzij je het principieel oneens bent met hoe Windows tijd opslaat.
+
 ### Optie 1: Linux instellen om lokale tijd te gebruiken
 
 In een terminal:
