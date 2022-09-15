@@ -48,7 +48,9 @@ theme:
 
 # Manual navigation to change ordering and use correct capitalization in words like macOS
 nav:
-  - 'Hoofdpagina': 'index.md'
+  - 'Hoofdpagina': 
+    - 'Hoofdpagina': 'index.md'
+    - 'Eduroam (Wi-Fi)': 'eduroam.md'
   - 'Linux':
     - 'Linux': 'linux/index.md'
     - 'Eduroam': 'linux/eduroam.md'
@@ -67,7 +69,6 @@ nav:
       - 'USB herstellen na dd': 'linux/installatie/usb-herstellen.md'
   - 'macOS':
     - 'macOS': 'mac-os/index.md'
-    - 'Eduroam': 'mac-os/eduroam.md'
     - 'Uva VPN': 'mac-os/vpn.md'
     - 'Installatie': 'mac-os/installatie.md'
   - 'Software':
