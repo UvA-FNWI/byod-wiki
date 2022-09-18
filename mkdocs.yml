@@ -48,9 +48,10 @@ theme:
 
 # Manual navigation to change ordering and use correct capitalization in words like macOS
 nav:
-  - 'Hoofdpagina': 
+  - 'Hoofdpagina':
     - 'Hoofdpagina': 'index.md'
     - 'Eduroam (Wi-Fi)': 'eduroam.md'
+    - 'Helpdesk': 'helpdesk.md'
   - 'Linux':
     - 'Linux': 'linux/index.md'
     - 'Eduroam': 'linux/eduroam.md'
