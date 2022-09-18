@@ -1,10 +1,7 @@
 # Shell script
 
-!!! warning "Draai het script alleen op een nieuw geïnstalleerd Ubuntu 22.04 systeem."
-    Het shell script is alleen gemaakt voor Ubuntu 22.04 en maakt aanpassingen die mogelijk niet gewenst zijn als je zelf al gebruikt maakt van Linux naast de UvA. In dit geval kan je het script doorlezen en handmatig enkele delen uitvoeren.
-
 !!! hint "Internetverbinding"
-    Als je net Linux hebt geïnstalleerd is het nodig eerst [verbinding te maken met eduroam](../eduroam.md).
+    Als je net Linux hebt geïnstalleerd is het nodig eerst [verbinding te maken met eduroam](../eduroam.md). Het "Amsterdam Science Park" open netwerk is langzaam en instabiel.
 
 ## Gebruik van het script
 
@@ -13,10 +10,23 @@ Open allereerst een terminal: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>
 !!! hint
     In een terminal gebruik je niet <kbd>Ctrl</kbd>+<kbd>V</kbd>, maar <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. Hetzelfde geldt voor <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
+### Alles installeren
+
 Plak de volgende regel in je terminal, druk op enter en vul je wachtwoord in:
 ```
 sudo bash -c "$(wget -q -O - https://raw.githubusercontent.com/UvA-FNWI/byod-scripts/master/install-extras.sh)"
 ```
+
+### Interactief
+
+Wil je zelf kiezen wat er geïnstalleerd wordt? Dat kan handig zijn, bijvoorbeeld als je maar een aantal vakken van Informatica of KI als minor doet.
+
+```
+wget -q https://raw.githubusercontent.com/UvA-FNWI/byod-scripts/master/install-extras.sh
+chmod +x install-extras.sh
+./install-extras.sh optional
+```
+
 
 <!--
 
