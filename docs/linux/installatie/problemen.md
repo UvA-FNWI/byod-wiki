@@ -155,3 +155,18 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 ### Optie 2: Windows instellen om UTC tijd te gebruiken
 
 In registry editor, maak in `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TimeZoneInformation` een nieuwe DWORD genaamd `RealTimeIsUniversal` met waarde `1`.
+
+## HP laptops waarbij RST niet uit kan
+
+Bij sommige nieuwere HP laptops is het niet mogelijk om RST uit te schakelen (dus niet mogelijk om AHCI te gebruiken). Je kan deze laptops herkennen aan "UEFI HII Configuration" in de UEFI. Voor zover wij weten is het niet mogelijk om Linux te installeren op deze laptops.
+
+Is de Windows installatie stuk (zoals BitLocker vergrendeld, zonder recovery key)? Hieronder staan instructies voor het (her)installeren van Windows.
+
+1. Maak een USB met Windows
+2. Ga naar [HP driver download](https://support.hp.com/us-en/drivers) en voer het serienummer van de laptop in
+3. Download de RST storage driver (en niet per ongeluk de HP solution center die HP graag wil dat je download)
+4. Voer deze exe uit op een Windows (virtuele) machine, en ga door tot de drivers zijn uitgepakt in `C:\SWSetup`. Stop daarna direct met de installatie.
+5. Maak een tweede USB stick met FAT32 filesystem
+6. Verplaats bestanden in `C:\SWSetup\SP...\F6` naar de tweede USB stick
+7. Start de Windows installer en probeer Windows te installeren, tot het mis als Windows geen disks kan vinden.
+8. Steek de tweede USB stick in de computer en probeer de driver te laden met "Load Driver". Staat de USB stick niet in de "Browse" lijst? Open een command prompt (<kbd>Shift</kbd>+<kbd>F10</kbd>). Nu kun je de USB een letter geven met diskpart.
