@@ -170,3 +170,26 @@ Is de Windows installatie stuk (zoals BitLocker vergrendeld, zonder recovery key
 6. Verplaats bestanden in `C:\SWSetup\SP...\F6` naar de tweede USB stick
 7. Start de Windows installer en probeer Windows te installeren, tot het mis als Windows geen disks kan vinden.
 8. Steek de tweede USB stick in de computer en probeer de driver te laden met "Load Driver". Staat de USB stick niet in de "Browse" lijst? Open een command prompt (<kbd>Shift</kbd>+<kbd>F10</kbd>). Nu kun je de USB een letter geven met diskpart.
+
+## Fix Windows boot (BCD en EFI)
+
+Boot naar een Windows USB en open een command prompt. Dit kan via het recovery menu of met Shift+F10.
+
+Open `diskpart`. Controleer (met `list vol`) of alle nodige partities een letter hebben, en onthoud de letters voor de Windows partitie en EFI boot partitie.
+
+Voer het volgende command uit, waarbij je `C:` vervangt met de letter van de Windows partitie, en `E:` met de letter van de EFI boot partitie.
+```
+bcdboot C:\Windows /s E: /f UEFI /v
+```
+
+Je kan ook nog de BCD repareren indien nodig:
+```
+bootrec /fixboot
+bootrec /rebuildbcd
+```
+
+TODO: moet je deze commands in een specifieke working directory uitvoeren?
+
+## Fix Windows boot (legacy boot)
+
+Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je de Windows installatie wel converteren naar UEFI met `mbr2gpt`? Of opnieuw installeren als de installatie niet belangrijk is?
