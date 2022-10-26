@@ -1,7 +1,13 @@
 # UvA VPN
 
 Door middel van UvAvpn is het mogelijk om vanaf thuis een verbinding te maken met het netwerk van de UvA. Zo kun je bijvoorbeeld vanaf thuis inloggen op servers die alleen toegankelijk zijn vanaf het UvA-netwerk (bijvoorbeeld het DAS5-cluster).
-## Installatie
+
+## Optie 1: Via NetworkManager
+
+!!! warning "Alles gaat via de VPN"
+    Als je deze methode gebruikt gaat al je internetverkeer via de VPN. Je bestaande verbindingen worden verbroken. Maak geen gebruik van bandbreedteintensieve applicaties, en doe geen dingen waarvan je niet wilt dat de UvA het weet.
+
+Deze methode geeft je een optie binnen instellingen om gemakkelijk te verbinden. Al je internetverkeer wordt via de UvA VPN verstuurd.
 
 ### Ubuntu
 
@@ -19,10 +25,24 @@ sudo nmcli con add type vpn \
 
 Hetzelfde als hierboven maar `network-manager-openconnect` i.p.v. `network-manager-openconnect-gnome`.
 
-### ArchLinux en overige
-Voor Archlinux kan er gebruik worden gemaakt van [openconnect](http://www.infradead.org/openconnect/index.html) voor meer informatie zie [Arch Wiki](https://wiki.archlinux.org/index.php/OpenConnect)
+### Overige
+Er kan gebruik worden gemaakt van [openconnect](http://www.infradead.org/openconnect/index.html), voor meer informatie zie [Arch Wiki](https://wiki.archlinux.org/index.php/OpenConnect)
 
 De tl;dr-versie is: gebruik `sudo openconnect --protocol=nc vpn.uva.nl` en log in met je studentnummer en wachtwoord. Als het goed is ben je dan met de VPN verbonden.
 
-## Gebruik
-Hierna is de VPN te vinden in het rechtsboven menu, onder vpn.
+## Optie 2: Split-tunnel VPN
+
+Al je internetverkeer via de VPN sturen kost veel bandbreedte voor de UvA en geeft jou ook een suboptimale internetervaring; de latency wordt waarschijnlijk te hoog om te kunnen gamen of videobellen. Door VPN-slice te gebruiken kunnen we alleen verkeer voor specifieke addressen door de VPN sturen.
+
+Installatie:
+```
+sudo apt install openconnect
+sudo pip3 install "vpn-slice[dnspython,setproctitle]"
+```
+
+Vervolgens:
+```
+sudo openconnect --protocol=nc vpn.uva.nl -s 'vpn-slice 130.37.0.0/16'
+```
+
+In dit voorbeeld gebruiken we `130.37.0.0/16` omdat de DAS5 servers in dit subnet zitten.
