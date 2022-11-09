@@ -4,7 +4,7 @@ Door middel van UvAvpn is het mogelijk om vanaf thuis een verbinding te maken me
 
 ## Optie 1: Via NetworkManager
 
-!!! warning "Alles gaat via de VPN"
+!!! warning "Al je verkeer gaat via de VPN"
     Als je deze methode gebruikt gaat al je internetverkeer via de VPN. Je bestaande verbindingen worden verbroken. Maak geen gebruik van bandbreedteintensieve applicaties, en doe geen dingen waarvan je niet wilt dat de UvA het weet.
 
 Deze methode geeft je een optie binnen instellingen om gemakkelijk te verbinden. Al je internetverkeer wordt via de UvA VPN verstuurd.
@@ -20,6 +20,9 @@ sudo nmcli con add type vpn \
     -- \
     vpn.data "gateway=vpn.uva.nl,protocol=nc"
 ```
+
+!!! warning "Oude OpenConnect versies"
+    De OpenConnect versie meegeleverd met Ubuntu 20.04 en ouder kan niet meer verbinden met de UvA VPN. Gelieve je systeem te [upgraden naar Ubuntu 22.04](./onderhoud.md).
 
 ### Kubuntu
 
