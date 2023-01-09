@@ -2,7 +2,7 @@
 
 ## Lokale server
 
-Zorg dat je `docker` en `docker-compose-plugin` hebt geïnstalleerd.
+Zorg dat je `docker-ce` met `docker-compose-plugin` (v2) hebt geïnstalleerd.
 ```
 BUILDKIT_PROGRESS=plain docker compose -f docker-compose.dev.yaml up --build --force-recreate
 ```
