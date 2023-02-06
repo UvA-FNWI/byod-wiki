@@ -32,7 +32,7 @@ Anonymous identity | `anonymous@uva.nl`
 
 ## Chrome OS
 
-ChromeOS is ongeveer hetzelfde als Android, behalve dat de domein optie opgesplitst is.
+ChromeOS is ongeveer hetzelfde als Android, behalve dat de domein optie opgesplitst is. Op sommige Chrome OS versies lijken de velden helemaal te ontbreken. In dat geval hoef je ze niet in te vullen.
 
 | | |
 | - | -
