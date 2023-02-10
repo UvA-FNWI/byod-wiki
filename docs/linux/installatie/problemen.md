@@ -7,14 +7,6 @@ Secure boot kun je niet uitzetten als je geen wachtwoord op de BIOS hebt staan
 EEprom: hier staat in dat de antenne op ne
 Handmatig in modprobe ding toevoegen in de driver dat antenne 2 gebruikt moet worden in plaats van antenne 1 https://askubuntu.com/questions/635625/how-do-i-get-a-realtek-rtl8723be-wireless-card-to-work
 
-## EFI boot volgorde
-Bij sommmige laptops kun je EFI volgorde niet aanpassen
-Gebruik efibootmgr om de volgorde aan te passen als dit niet werk gebruik de fix-hp / fix-uefi scrips.
-
-Windows bootloader gehardcodet in UEFI.
-FixHPGrub FixUEFIGrub (in wiki)
-(kan problemen opleveren bij windows update)
-
 ## Synaptics-touchpad werkt matig / hapert
 Paradoxaal kan het verwijderen van de `xserver-xorg-input-synaptics`-package voor verbetering zorgen; de nieuwere `libinput`-driver wordt dan gebruikt.
 
@@ -51,18 +43,6 @@ We raden je aan om hulp te vragen bij deze stappen, tenzij je zelf écht weet wa
 
 ## Bitlocker staat aan
 Zie [het artikel over BitLocker](./bitlocker.md).
-
-## Grub start niet op (systeem boot direct naar windows)
-
-### Bootloader volgorde aanpassen
-
-Dit doe je in de UEFI firmware settings. Hier kom je door in Windows te shift-klikken op `Restart` in het power menu. Vervolgens ga je naar Troubleshoot > Advanced > UEFI Firmware Settings > Restart. Vervolgens vind je waarschijnlijk ergens een 'Boot' tab waar je een lijst van bootloaders zit, zoals `Windows Boot Manager` en als het goed is iets anders zoals `ubuntu`. Zorg dat `Windows Boot Manager` onderaan staat.
-
-### Alleen Windows Boot Manager?
-
-Heb je Ubuntu wel geinstalleerd? Als je vanaf de USB opstart en op 'Try Ubuntu' klikt beland je in een live omgeving die er identiek uit ziet als de echte installatie, maar er is niks geinstalleerd.
-
-Geavanceerd: kijk of je zelf handmatig een path kan toevoegen. Als dit niet mogelijk is kijk of je <code>efibootmgr</code> op de live usb stick kan gebruiken om de boot volgorde aan te passen.
 
 ## Boot niet met Nvidia GPU
 Booten met `nomodeset` als kernel argument en switchen naar de Nvidia driver ipv open source driver:
@@ -170,26 +150,3 @@ Is de Windows installatie stuk (zoals BitLocker vergrendeld, zonder recovery key
 6. Verplaats bestanden in `C:\SWSetup\SP...\F6` naar de tweede USB stick
 7. Start de Windows installer en probeer Windows te installeren, tot het mis als Windows geen disks kan vinden.
 8. Steek de tweede USB stick in de computer en probeer de driver te laden met "Load Driver". Staat de USB stick niet in de "Browse" lijst? Open een command prompt (<kbd>Shift</kbd>+<kbd>F10</kbd>). Nu kun je de USB een letter geven met diskpart.
-
-## Fix Windows boot (BCD en EFI)
-
-Boot naar een Windows USB en open een command prompt. Dit kan via het recovery menu of met Shift+F10.
-
-Open `diskpart`. Controleer (met `list vol`) of alle nodige partities een letter hebben, en onthoud de letters voor de Windows partitie en EFI boot partitie.
-
-Voer het volgende command uit, waarbij je `C:` vervangt met de letter van de Windows partitie, en `E:` met de letter van de EFI boot partitie.
-```
-bcdboot C:\Windows /s E: /f UEFI /v
-```
-
-Je kan ook nog de BCD repareren indien nodig:
-```
-bootrec /fixboot
-bootrec /rebuildbcd
-```
-
-TODO: moet je deze commands in een specifieke working directory uitvoeren?
-
-## Fix Windows boot (legacy boot)
-
-Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je de Windows installatie wel converteren naar UEFI met `mbr2gpt`? Of opnieuw installeren als de installatie niet belangrijk is?
