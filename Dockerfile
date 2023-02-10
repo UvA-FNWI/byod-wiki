@@ -1,4 +1,4 @@
-FROM python:3 AS builder
+FROM python:3.11 AS builder
 
 COPY requirements.txt /
 
