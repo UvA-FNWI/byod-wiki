@@ -45,11 +45,11 @@ sudo pip3 install "vpn-slice[dnspython,setproctitle]"
 
 Vervolgens verbind je met de VPN:
 ```
-sudo openconnect --protocol=nc vpn.uva.nl -s 'vpn-slice 130.37.199.8 83.96.0.0/16 85.10.0.0/16 145.18.107.198 145.18.12.22'
+sudo openconnect --protocol=nc vpn.uva.nl -s 'vpn-slice 130.37.199.8 83.96.0.0/16 85.10.0.0/16 145.18.0.0/16'
 ```
 
 Dit voorbeeld omvat veelvoorkomende IP adressen. Het kan zijn dat je zelf een IP adres moet toevoegen, als je wilt verbinden met een andere dienst.
 
 - `130.37.199.8` DAS5 voor DPP
 - `83.96.0.0/16 85.10.0.0/16` Webtechnologies 2023
-- `145.18.107.198 145.18.12.22` UvA-Q (`data.sap.uva.nl` en `bw.sap.uva.nl`)
+- `145.18.0.0/16` Verschillende UvA diensten, zoals UvA-Q (AS1124)
