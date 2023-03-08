@@ -94,7 +94,7 @@ zodat een definitieve uitschakeling kan worden volbracht, volg de volgende stapp
 
 Verander nu hetzelfde in `/etc/default/grub` en voer `sudo update-grub` uit om de wijzigingen door te voeren.
 
-### Firefox installeren als deb in plaats van snap
+## Firefox installeren als deb in plaats van snap
 
 `sudo nano /etc/apt/preferences.d/firefox-no-snap`
 ```
@@ -110,7 +110,7 @@ sudo add-apt-repository ppa:mozillateam/ppa
 sudo apt install firefox
 ```
 
-### Kan NVIDIA GPU niet uitschakelen via GUI
+## Kan NVIDIA GPU niet uitschakelen via GUI
 
 ![prime screenshot](../../assets/prime-intel-disabled.png)
 
