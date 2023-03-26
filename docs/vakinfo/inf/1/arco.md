@@ -1,4 +1,4 @@
 # Architectuur en Computerorganisatie
 
 ## Benodigde Software
-* [SIMPL](../../../software/simpl.md)
+* [SIMPL](../../../software/sim-pl.md)

@@ -18,25 +18,10 @@ Installeer git met homebrew:
 brew install git
 ```
 
-### Arch Linux
-
-```
-pacman -S git
-```
-
 ### Fedora
 
 ```
-sudo yum install git
-```
-
-### Gentoo
-
-Installeer [dev-vcs/git](http://packages.gentoo.org/package/dev-vcs/git).
-
-### openSUSE
-```
-sudo zypper install git
+sudo dnf install git
 ```
 
 ## Documentatie

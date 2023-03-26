@@ -80,7 +80,7 @@ nav:
     - 'LaTeX': 'software/latex.md'
     - 'Matlab': 'software/matlab.md'
     - 'Thunderbird (e-mail)': 'software/thunderbird.md'
-    - 'SIMPL': 'software/simpl.md'
+    - 'SIM-PL': 'software/sim-pl.md'
   - 'Vakinformatie':
     - 'Vakinformatie': 'vakinfo/index.md'
     - 'Informatica':

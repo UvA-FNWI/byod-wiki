@@ -10,12 +10,13 @@ Met [Overleaf](https://overleaf.com) is het mogelijk om makkelijk samen te werke
 
 Omdat Overleaf geen installatie nodig heeft en samenwerken gemakkelijk maakt, wordt er weinig meer lokaal gewerkt met LaTeX bij de UvA. Mocht je het toch willen installeren, bijvoorbeeld zodat je offline in de trein kan werken, kan je dit doen. Reken er wel op dat je op jezelf aangewezen bent als het stuk gaat.
 
-Naast de LaTeX command line tools wil je waarschijnlijk ook een graphische editor installeren zoals [Kile](https://apps.kde.org/kile/).
+Naast de LaTeX command line tools wil je waarschijnlijk ook een grafische editor installeren zoals [Kile](https://apps.kde.org/kile/).
 
 ### Debian/Ubuntu
 
 ```
 sudo apt install texlive-full
+sudo apt install kile
 ```
 
 ### macOS
@@ -28,19 +29,11 @@ Installeer [mactex](https://www.tug.org/mactex/)
 pacman -S texlive-most
 ```
 
-### Gentoo
-
-Installeer [app-text/texlive](http://packages.gentoo.org/package/app-text/texlive).
-
 ### Fedora
 
 ```
-sudo yum install texlive
-```
-
-### openSUSE
-```
-sudo zypper install texlive
+sudo dnf install texlive
+sudo dnf install kile
 ```
 
 ## Documentatie
