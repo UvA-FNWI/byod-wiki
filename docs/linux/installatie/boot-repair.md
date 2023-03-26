@@ -2,11 +2,9 @@
 
 ## Laptop start op naar Windows in plaats van grub
 
-### Boot volgorde aanpassen
-Pas je de boot volgorde aan in UEFI firmware settings, zodat grub/ubuntu bovenaan staat.
+Pas je de boot volgorde aan in UEFI firmware settings, zodat Grub/Ubuntu bovenaan staat.
 
-### Boot volgorde aanpassen (via `efibootmgr`)
-Mocht dat niet mogelijk zijn bij jouw model laptop, kun je het proberen met de `efibootmgr` tool (vanaf live USB).
+In plaats van binnen UEFI firmware settings kan je het ook binnen (Live) Linux doen, met `efibootmgr`. Run eerst `efibootmgr` om te zien welke opties er zijn. Bijvoorbeeld, Boot0004 voor Ubuntu en Boot0003 voor Windows. Vervolgens kan je de boot volgorde instellen met `efibootmgr -o 4,3`.
 
 ### Geen GRUB boot entry
 
@@ -15,29 +13,30 @@ Probeer handmatig een boot entry toe te voegen met `efibootmgr`:
 efibootmgr -c -L "Grub" -l '\EFI\Grub\grubx64.efi'
 ```
 
+Bestaat `\EFI\Grub\grubx64.efi` niet? Volg de instructies bij "Linux boot reparatie".
+
 ### Custom boot entry werkt ook niet
 
 Sommige laptops kunnen helemaal niet booten van EFI bestanden behalve `\EFI\Microsoft\Boot\bootmgfw.efi`. De enige workaround is dan om de grub file te verplaatsen naar bootmgfw.efi, alsof het Windows is. Gebruik (op eigen risico) [dit script](https://github.com/UvA-FNWI/byod-scripts/blob/master/fix-grub-uefi.sh) om het makkelijk te doen. Het gaat wel weer stuk bij grote Windows updates, wanneer Windows de EFI file weer vervangt.
 
-## Windows EFI bestanden genereren
+## Fix Windows boot (UEFI)
 
-Het kan gebeuren dat je per ongeluk je EFI partitie of bestanden erop verwijderd. Met de `bcdboot` command kun je ze opnieuw genereren.
+Het kan gebeuren dat je per ongeluk je EFI partitie of bestanden erop verwijderd. Met het `bcdboot` commando kun je ze opnieuw genereren. Deze instructies kunnen ook helpen als Windows niet meer opstart na het verplaatsen, vergoten, of verkleinen van `C:`.
+
+Als je nog geen EFI System Partition (ESP) hebt, maak er dan eerst een aan. Bijvoorbeeld, met gparted op een live USB. Je hebt niet veel ruimte nodig, met 512MB heb je sowieso genoeg. De partitie moet een FAT32 filesystem bevatten. Na het maken van de partitie, klik met de rechtermuisknop op de partitie en kies voor "Manage flags". Zet vervolgens "esp" aan.
+
+Mocht je al een ESP hebben, is het alsnog een goed idee om het type te verifiëren. Dit kan bijvoorbeeld binnen Linux met fdisk. `sudo fdisk /dev/<disk>` en vervolgens `i`. **Je EFI System Partition hoort een Type-UUID van `C12A7328-F81F-11D2-BA4B-00A0C93EC93B` te hebben**. Mocht het niet zo zijn, kan je het type veranderen met `t`. Als je ESP het verkeerde type heeft zal Windows grotendeels lijken te werken, maar functies zoals slaapstand, opstartopties, en windows update werken mogelijk niet goed.
 
 Boot naar een Windows USB en open een command prompt. Dit kan via het recovery menu of met Shift+F10.
 
-Open `diskpart`. Controleer (met `list vol`) of alle nodige partities een letter hebben, en onthoud de letters voor de Windows partitie en EFI boot partitie. Als je geen EFI partitie hebt, maak er dan nu eentje aan (FAT32 partitie met partition type `C12A7328-F81F-11D2-BA4B-00A0C93EC93B`). Het is erg belangrijk dat de partitie deze GUID heeft! Zonder de GUID kan je wel booten maar werken dingen als advanced startup niet.
+Open `diskpart`. Controleer (met `list vol`) of alle nodige partities een letter hebben, en onthoud de letters voor de Windows partitie en EFI boot partitie.
 
 Voer het volgende command uit, waarbij je `C:` vervangt met de letter van de Windows partitie, en `E:` met de letter van de EFI boot partitie.
 ```
 bcdboot C:\Windows /s E: /f UEFI /v
 ```
 
-Repareer voor de zekerheid ook de BCD volgens de instructies hieronder.
-
-## Windows BCD repareren
-Na het vergroten, verkleinen of verplaatsen van de Windows partitie kan het zijn dat Windows niet meer opstart. Om dit te fixen kan je de BCD (boot configuration database) opnieuw genereren.
-
-Boot naar een Windows USB en open een command prompt. Dit kan via het recovery menu of met Shift+F10.
+Repareer ook de BCD:
 
 ```
 bootrec /fixboot
@@ -48,17 +47,23 @@ bootrec /rebuildbcd
 
 Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je de Windows installatie wel converteren naar UEFI met `mbr2gpt`? Of opnieuw installeren als de installatie niet belangrijk is? EFI is een stuk makkelijker om mee te werken.
 
-## Linux boot reparatie
+## Linux boot reparatie (UEFI)
 
 Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
 
-
-1. Boot een live USB.
-2. Mount de root partitie in `/mnt`
-3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem is niet EFI)
+1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
+2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte.
+3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
 4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
-5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem.
-6. Voor de zekerheid: `apt install grub-efi shim-signed` en `apt remove grub-pc`
-7. Genereer initramfs bestanden: `update-initramfs -u -k all`
-8. Installeer grub: `grub-install`
+5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
+6. Voor de zekerheid, controleer dat grub geïnstalleerd is: `apt install grub-efi shim-signed`. En niet de legacy grub: `apt remove grub-pc`
+7. Installeer grub naar `/boot/efi` met: `grub-install`
+8. Voor de zekerheid, genereer initramfs bestanden: `update-initramfs -u -k all`
 9. Ter controle: `update-grub` (hier zie je als het goed is al je initramfs bestanden langskomen, en eventueel Windows via os-prober)
+
+### Fedora in plaats van Debian/Ubuntu
+* In plaats van `apt install grub-efi shim-signed`, gebruik `dnf reinstall grub2-efi grub2-efi-modules shim`.
+* `grub-install` is niet nodig. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
+* In plaats van `update-initramfs -u -k all`, gebruik `dracut -vf`
+* In plaats van `update-grub`, gebruik `grub2-mkconfig -o /boot/grub2/grub.cfg`
+* [Meer informatie](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#installing-grub-2-configuration-on-uefi-system)
