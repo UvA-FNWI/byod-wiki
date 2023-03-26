@@ -60,15 +60,15 @@ nav:
     - 'Backups': 'linux/backups.md'
     - 'Onderhoud': 'linux/onderhoud.md'
     - 'Laptopkeuze': 'linux/laptopkeuze.md'
+    - 'Veelvoorkomende Problemen': 'linux/problemen.md'
+    - 'Opstartproblemen': 'linux/boot-repair.md'
     - 'Installatie':
       - 'Overzicht': 'linux/installatie/index.md'
       - '1. Voorbereiding': 'linux/installatie/voorbereiding.md'
       - '2. Installatie': 'linux/installatie/installatie.md'
       - '3. Shell script': 'linux/installatie/shell-script.md'
-      - 'Opstartproblemen': 'linux/installatie/boot-repair.md'
-      - 'Veelvoorkomende Problemen': 'linux/installatie/problemen.md'
-      - 'BitLocker': 'linux/installatie/bitlocker.md'
       - 'USB herstellen na dd': 'linux/installatie/usb-herstellen.md'
+      - 'BitLocker': 'linux/installatie/bitlocker.md'
   - 'macOS':
     - 'macOS': 'mac-os/index.md'
     - 'Uva VPN': 'mac-os/vpn.md'

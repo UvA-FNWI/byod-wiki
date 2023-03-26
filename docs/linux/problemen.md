@@ -1,11 +1,7 @@
 # Veelvoorkomende problemen
 
 ## Acer laptops secure boot
-Secure boot kun je niet uitzetten als je geen wachtwoord op de BIOS hebt staan
-
-## HP laptops (met realtek)
-EEprom: hier staat in dat de antenne op ne
-Handmatig in modprobe ding toevoegen in de driver dat antenne 2 gebruikt moet worden in plaats van antenne 1 https://askubuntu.com/questions/635625/how-do-i-get-a-realtek-rtl8723be-wireless-card-to-work
+Secure boot kun je niet uitzetten als je geen wachtwoord op de BIOS hebt staan.
 
 ## Synaptics-touchpad werkt matig / hapert
 Paradoxaal kan het verwijderen van de `xserver-xorg-input-synaptics`-package voor verbetering zorgen; de nieuwere `libinput`-driver wordt dan gebruikt.
@@ -25,7 +21,7 @@ Zet de laptop uit en weer aan, als het goed is wordt dan de rtl8821ce-driver gel
 ## Intel RST / Disk in RAID-modus / Linux ziet de disk niet
 
 !!! warning "Versleuteling"
-    Controleer eerst goed of je [BitLocker](./bitlocker.md) uit hebt staan!
+    Controleer eerst goed of je [BitLocker](./installatie/bitlocker.md) uit hebt staan!
 
 !!! warning "Inloggen in safe mode"
     In *safe mode* moet ingelogd worden zonder Windows Hello, dus men moet het wachtwoord van hun Microsoft-account (of lokaal account, als ze dat hebben) kennen!
@@ -42,7 +38,7 @@ We raden je aan om hulp te vragen bij deze stappen, tenzij je zelf écht weet wa
 * Nu zou de Linux-installer de disk wel moeten herkennen.
 
 ## Bitlocker staat aan
-Zie [het artikel over BitLocker](./bitlocker.md).
+Zie [het artikel over BitLocker](./installatie/bitlocker.md).
 
 ## Boot niet met Nvidia GPU
 Booten met `nomodeset` als kernel argument en switchen naar de Nvidia driver ipv open source driver:
@@ -112,7 +108,7 @@ sudo apt install firefox
 
 ## Kan NVIDIA GPU niet uitschakelen via GUI
 
-![prime screenshot](../../assets/prime-intel-disabled.png)
+![prime screenshot](../assets/prime-intel-disabled.png)
 
 Schakel via de command line interface:
 ```
