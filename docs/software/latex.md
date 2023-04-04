@@ -32,7 +32,7 @@ pacman -S texlive-most
 ### Fedora
 
 ```
-sudo dnf install texlive
+sudo dnf install texlive-scheme-medium
 sudo dnf install kile
 ```
 
