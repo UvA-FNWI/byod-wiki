@@ -22,11 +22,12 @@ jupyter notebook
 Voor veel vakken zul je extra packages nodig hebben, zoals bijvoorbeeld `numpy`, `scipy`, `pandas` of `sklearn`. Er zijn twee methods om packages te installeren.
 
 ### Via apt
+
 Dit is het snelst en meest eenvoudig en werkt gegarandeerd. Helaas zijn niet alle packages beschikbaar en zijn de versies wat ouder maar dit zou geen probleem moeten zijn voor onze opleidingen.
 
 Python packages zijn beschikbaar als de apt packages `python3-<naam>`. Bijvoorbeeld, het installeren van numpy en scipy:
 ```
-sudo apt install python3-scipy python3-scipy
+sudo apt install python3-numpy python3-scipy
 ```
 
 !!! hint "Een package vinden"
