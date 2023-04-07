@@ -1,5 +1,7 @@
 # Opstartproblemen
 
+Deze pagina gaat over het repareren van opstartbestanden van bestaande besturingssystemen. Bijvoorbeeld, als het stuk gaat na een update of na het per ongeluk verwijderen van de EFI system partition.
+
 ## Laptop start op naar Windows in plaats van grub
 
 Pas je de boot volgorde aan in UEFI firmware settings, zodat Grub/Ubuntu bovenaan staat.
@@ -47,7 +49,7 @@ bootrec /rebuildbcd
 
 Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je de Windows installatie wel converteren naar UEFI met `mbr2gpt`? Of opnieuw installeren als de installatie niet belangrijk is? EFI is een stuk makkelijker om mee te werken.
 
-## Linux boot reparatie (UEFI)
+## Debian, Ubuntu boot reparatie (UEFI)
 
 Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
 
@@ -61,9 +63,41 @@ Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan
 8. Voor de zekerheid, genereer initramfs bestanden: `update-initramfs -u -k all`
 9. Ter controle: `update-grub` (hier zie je als het goed is al je initramfs bestanden langskomen, en eventueel Windows via os-prober)
 
-### Fedora in plaats van Debian/Ubuntu
-* In plaats van `apt install grub-efi shim-signed`, gebruik `dnf reinstall grub2-efi grub2-efi-modules shim`.
-* `grub-install` is niet nodig. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
-* In plaats van `update-initramfs -u -k all`, gebruik `dracut -vf`
-* In plaats van `update-grub`, gebruik `grub2-mkconfig -o /boot/grub2/grub.cfg`
-* [Meer informatie](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#installing-grub-2-configuration-on-uefi-system)
+## Fedora boot reparatie (UEFI)
+
+Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
+
+Hier gaan we uit van een ext4 root partitie. Brtfs heeft misschien andere commands nodig voor het eerste gedeelte?
+
+1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
+2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte.
+3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
+4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
+5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
+6. Herinstalleer grub: `dnf reinstall grub2-efi grub2-efi-modules shim`. Dit zorgt er ook meteen voor dat de nodige bestanden in `/boot/efi` worden aangemaakt. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
+7. Voor de zekerheid, genereer initramfs bestanden: `dracut -vf`
+8. Voor de zekerheid, update de grub config:
+    - `grub2-mkconfig -o /etc/grub2.cfg`
+    - `grub2-mkconfig -o /etc/grub2-efi.cfg`
+    - `grub2-mkconfig -o /boot/grub2/grub.cfg`
+
+Meer informatie kun je [hier](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#installing-grub-2-configuration-on-uefi-system) vinden.
+
+## Boot reparatie met LUKS
+
+Installeer de `cryptsetup` package (als het goed is al geïnstalleerd).
+
+Open nu de disk:
+```
+cryptsetup luksOpen /dev/<disk> <name>`
+```
+De naam (`<name>`) moet je zelf aangeven, **LET OP** dat je dezelfde naam gebruikt als je systeem heeft in `/etc/crypttab`, anders kan het volume straks niet geopend worden bij het opstarten! Als je niet zeker weet wat de naam was, kies eerst wat. Check dan na het mounten wat de naam hoort te zijn, sluit luks en open het volume opnieuw.
+
+Na dit commando heb je als het goed is een 'virtuele disk' in `/dev/mapper`.
+
+## Boot reparatie met LVM
+
+1. Installeer de `lvm2` package (als het goed is al geïnstalleerd).
+2. Activeer de *volume group* activeren met `vgchange -ay`.
+
+Je volumes zijn nu te vinden in `/dev/<naam van volume group>`. Zie verder de normale chroot instructies.
