@@ -75,7 +75,7 @@ Hier gaan we uit van een ext4 root partitie. Brtfs heeft misschien andere comman
 4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
 5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
 6. Herinstalleer grub: `dnf reinstall grub2-efi grub2-efi-modules shim`. Dit zorgt er ook meteen voor dat de nodige bestanden in `/boot/efi` worden aangemaakt. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
-7. Voor de zekerheid, genereer initramfs bestanden: `dracut -vf`
+7. Voor de zekerheid, genereer initramfs bestanden: `dracut --regenerate-all -vf`
 8. Voor de zekerheid, update de grub config:
     - `grub2-mkconfig -o /etc/grub2.cfg`
     - `grub2-mkconfig -o /etc/grub2-efi.cfg`
