@@ -10,17 +10,23 @@ Voor dual-boot (Linux installeren naast Windows) wordt je opslagruimte verdeeld 
 
 Resoluties hoger dan 1920x1080 hebben scaling nodig zodat tekst niet te klein wordt. Niet alle applicaties ondersteunen scaling, vooral niet *fractional scaling* (tussen 1x-2x). Om deze reden kan je het beste schermen met hoge resoluties vermijden.
 
-## Discrete videokaarten
+## Videokaarten
 
-Videokaarten met hoge prestaties zijn niet nodig voor de opleiding en werken vaak onhandig met Linux. Hieronder staat per merk uitgelegd waar je tegenaan kan lopen.
+Videokaarten met hoge prestaties zijn **niet nodig** voor de opleiding. Betaal alleen meer voor een laptop met luxe videokaart als je dat zelf nodig hebt.
+
+### Intel HD graphics / Arc
+
+Intel graphics worden goed ondersteund binnen Linux.
+
+### AMD
+
+AMD videokaarten worden goed ondersteund binnen Linux.
 
 ### NVIDIA
 
-Linux heeft wel een ingebouwde driver voor NVIDIA videokaarten (`nouveau`) maar deze is niet zo goed als de proprietary driver van NVIDIA zelf, die handmatig geïnstalleerd moet worden. Zelfs met de proprietary driver kan Linux niet automatisch de videokaart uitschakelen wanneer deze niet nodig is (dat kan Windows wel). Doordat de videokaart altijd aan staat zal je laptop een aanzienlijk kortere batterijduur hebben en eerder de ventilatoren laten draaien. Het volledig aan- of uitzetten van de videokaart heeft een reboot nodig dus in de praktijk zal je waarschijnlijk je videokaart uitgeschakeld hebben, dan is het zonde om ervoor betaald te hebben. Een videokaart is alleen handig als je echt van plan bent om naast de studie ook je laptop te gebruiken om te gamen (waarschijnlijk in Windows).
+Koop liever een laptop zonder een NVIDIA videokaart, tenzij je zelf graag wil gamen met de Nvidia kaart Windows. Hieronder volgt een uitgebreide uitleg.
 
-### Intel Arc
-
-Intel Arc is de nieuwe videokaartserie van Intel, momenteel worden deze niet ondersteund. We gaan nog onderzoeken in hoeverre we beeld kunnen krijgen zodra we testmodellen ontvangen.
+Linux heeft wel een ingebouwde driver voor NVIDIA videokaarten (`nouveau`) maar deze is niet zo goed als de proprietary driver van NVIDIA zelf, die handmatig geïnstalleerd moet worden. Zelfs met de proprietary driver kan Linux niet automatisch de videokaart uitschakelen wanneer deze niet nodig is (dat kan Windows wel). Doordat de videokaart altijd aan staat zal je laptop een aanzienlijk kortere batterijduur hebben en eerder de ventilatoren laten draaien. Het volledig aan- of uitzetten van de videokaart heeft een reboot nodig. Als je je laptop niet gebruikt voor grafische taken, zal je in de praktijk je videokaart altijd uitegschakeld hebben. Dan is het zonde om ervoor te betalen. Een videokaart is alleen handig als je echt van plan bent om naast de studie ook je laptop te gebruiken om te gamen.
 
 ## WiFi
 
