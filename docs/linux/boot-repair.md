@@ -54,7 +54,7 @@ Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je 
 Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
 
 1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
-2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte.
+2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte. Of volg anders de speciale instructies voor LUKS/LVM/btrfs.
 3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
 4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
 5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
@@ -70,7 +70,7 @@ Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan
 Hier gaan we uit van een ext4 root partitie. Brtfs heeft misschien andere commands nodig voor het eerste gedeelte?
 
 1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
-2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte.
+2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte. Of volg anders de speciale instructies voor LUKS/LVM/btrfs.
 3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
 4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
 5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
@@ -87,13 +87,22 @@ Meer informatie kun je [hier](https://docs.fedoraproject.org/en-US/quick-docs/bo
 
 Installeer de `cryptsetup` package (als het goed is al geïnstalleerd).
 
-Open nu de disk:
+Open de disk:
 ```
 cryptsetup luksOpen /dev/<disk> <name>`
 ```
-De naam (`<name>`) moet je zelf aangeven, **LET OP** dat je dezelfde naam gebruikt als je systeem heeft in `/etc/crypttab`, anders kan het volume straks niet geopend worden bij het opstarten! Als je niet zeker weet wat de naam was, kies eerst wat. Check dan na het mounten wat de naam hoort te zijn, sluit luks en open het volume opnieuw.
-
 Na dit commando heb je als het goed is een 'virtuele disk' in `/dev/mapper`.
+
+De naam (`<name>`) moet je zelf aangeven, **LET OP** dat je dezelfde naam gebruikt als je systeem heeft in `/etc/crypttab`, anders kan het volume straks niet geopend worden bij het opstarten! Als je niet zeker weet wat de naam was, kies eerst wat. Check dan na het mounten wat de naam hoort te zijn, sluit luks en open het volume opnieuw. Dus zoiets:
+```
+cryptsetup luksOpen /dev/<disk> temp`
+mount /dev/mapper/temp /mnt
+cat /mnt/etc/crypttab
+umount /mnt
+cryptsetup luksClose temp
+# Nu met de goede naam uit crypttab
+cryptsetup luksOpen /dev/<disk> <naam>
+```
 
 ## Boot reparatie met LVM
 
@@ -101,3 +110,28 @@ Na dit commando heb je als het goed is een 'virtuele disk' in `/dev/mapper`.
 2. Activeer de *volume group* activeren met `vgchange -ay`.
 
 Je volumes zijn nu te vinden in `/dev/<naam van volume group>`. Zie verder de normale chroot instructies.
+
+## Boot reparatie met btrfs
+
+De configuratie verschilt per distributie. Fedora heeft bijvoorbeeld een volume voor `/home` een volume voor `/`. Mount eerst de filesystem om te kijken welke volumes er zijn:
+```
+mount /dev/... /mnt
+ls /mnt
+```
+Stel dat de root data in een volume genaamd `root` staat:
+```
+cat /mnt/root/etc/fstab
+```
+Nu zie je de opties die je nodig hebt. Bijvoorbeeld:
+```
+UUID=... /     btrfs subvol=root,compress=zstd:1,x-systemd.device-timeout=0 0 0
+UUID=... /home btrfs subvol=home,compress=zstd:1,x-systemd.device-timeout=0 0 0
+```
+Doe dan:
+```
+umount /mnt
+mount -t btrfs -o subvol=root,compress=zstd:1 /dev/... /mnt
+mount -t btrfs -o subvol=home,compress=zstd:1 /dev/... /mnt/home
+```
+
+Vergeet niet ook `/mnt/boot` en `/mnt/boot/efi` te mounten.
