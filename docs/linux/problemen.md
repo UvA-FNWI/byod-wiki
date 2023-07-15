@@ -18,6 +18,16 @@ blacklist rtw88_8821ce
 
 Zet de laptop uit en weer aan, als het goed is wordt dan de rtl8821ce-driver geladen.
 
+## RTL 8168 / 8169 / 8101 / 8111
+
+Het kan zijn dat deze chipsets niet goed werken met dual boot. De Windows driver schakeld namelijk de netwerkkaart uit bij het afsluiten, en daar kan de Linux driver niet mee omgaan.
+
+Wake-On-Lan aanzetten binnen Windows zou dit probleem moeten oplossen. Deze optie kun je vinden in device manager bij de netwerkkaart.
+
+Je kan ook de laptop volledig uitzetten, een tijdje wachten (~10 sec), en weer opstarten.
+
+Meer informatie: https://en.opensuse.org/SDB:Realtek_8169_driver_problem
+
 ## Intel RST / Disk in RAID-modus / Linux ziet de disk niet
 
 !!! warning "Versleuteling"
