@@ -1,4 +1,4 @@
-Je zal een USB-stick van ten minste 4 GiB nodig hebben. Je laptop zal meerdere keren herstarten. Het is handig om deze pagina te openen op een ander apparaat zodat je de instructies niet steeds hoeft op te zoeken.
+Je zal een USB-stick van ten minste 8 GiB nodig hebben. Je laptop zal meerdere keren herstarten. Het is handig om deze pagina te openen op een ander apparaat zodat je de instructies niet steeds hoeft op te zoeken.
 
 ## Troubleshooting
 Gaat er iets mis tijdens of na de installatie? Kijk dan naar [de pagina met veelvoorkomende problemen](../problemen.md), vraag om hulp of stuur (als je thuis bent) een mailtje naar `laptops-fnwi@uva.nl`. Tijdens de introductiedag is er een ruimte beschikbaar voor als de installatie uitloopt, als je niet weet waar dit is kan je dit aan een assistent vragen.
@@ -14,7 +14,7 @@ Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS g
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
 Zorg allereerst dat je een lege USB-stick van minstens 4 GiB hebt, en sluit deze aan op je computer.
 
-Download vervolgens het ISO-bestand van de [64-bit versie van Ubuntu 22.04](https://ubuntu.com/download/desktop/thank-you?version=22.04.2&architecture=amd64).
+Download vervolgens het ISO-bestand van de [64-bit versie van Ubuntu 22.04](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64).
 
 Download het programma [Rufus](https://github.com/pbatard/rufus/releases/download/v3.18/rufus-3.18p.exe); een klein programma waarmee je de ISO naar de usb-stick kan schrijven, zonder handmatig partities te maken en bestanden te kopiëren.
 
