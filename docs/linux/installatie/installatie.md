@@ -22,6 +22,7 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
     * Dell: <kbd>F12</kbd>
     * HP: <kbd>Esc</kbd> / <kbd>F9</kbd>
     * Lenovo: <kbd>F12</kbd>
+    * Lenovo thinkpad: <kbd>F1</kbd>
 
 2. **Windows opstartmenu**
     Net als de UEFI firmware heeft Windows ook een opstartmenu.
