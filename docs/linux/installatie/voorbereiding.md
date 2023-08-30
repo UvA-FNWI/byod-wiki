@@ -43,8 +43,8 @@ Open Settings (via ⚙️ in Start), en ga naar:
 
 ### Windows 11
 1. Open 'Control Panel' / 'Configuratiescherm' (bijv. door te zoeken in start menu)
-2. Klik op 'Hardware and Sound'
-3. Klik op 'Power Options'
+2. Klik op 'Hardware and Sound' / 'Hardware en geluiden'
+3. Klik op 'Power Options' / 'Energiebeheer'
 4. Klik op 'Choose what the power button does'
 5. Klik op 'Change settings that are currently unavailable'
 6. Zet 'Turn on fast-startup (recommended)' uit.
