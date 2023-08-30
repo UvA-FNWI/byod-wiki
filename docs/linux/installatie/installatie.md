@@ -20,7 +20,7 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
     * Acer: <kbd>F12</kbd>
     * ASUS: <kbd>Esc</kbd> / <kbd>F8</kbd>
     * Dell: <kbd>F12</kbd>
-    * HP: <kbd>Esc</kbd> / <kbd>F9</kbd>
+    * HP: <kbd>Esc</kbd> / <kbd>F9</kbd> / <kbd>F10</kbd>
     * Lenovo: <kbd>F12</kbd>
     * Lenovo thinkpad: <kbd>F1</kbd>
 
