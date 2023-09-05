@@ -87,7 +87,7 @@ Mogelijk dat de PSR van het panel stuk is, boot met (intel cpus) i915.enable_psr
 
 Native Command Queuing (NCQ) is een techniek die de lees- en schrijfcommando's van en naar de hardeschijf optimaliseert. Er zijn echter SSD's die dit niet ondersteunen en waar Linux toch deze techniek probeert toe te passen. Je merkt vrijwel meteen wanneer dit het geval is: Ubuntu zal bevriezen tijdens het opstarten, zowel bij de live-cd als na een installatie op de harde schijf.
 
-### Eenmalig uitschakelen
+**Eenmalig uitschakelen**
 
 Om NCQ eenmalig uit te schakelen, bijvoorbeeld om de live-cd op te starten of om te booten
 zodat een definitieve uitschakeling kan worden volbracht, volg de volgende stappen:
@@ -96,7 +96,7 @@ zodat een definitieve uitschakeling kan worden volbracht, volg de volgende stapp
 * Voeg aan `GRUB_CMDLINE_LINUX_DEFAULT` het volgende toe: "libata.force=noncq".
 * Druk op F10 om Linux op te starten.
 
-### Permanent uitschakelen
+**Permanent uitschakelen**
 
 Verander nu hetzelfde in `/etc/default/grub` en voer `sudo update-grub` uit om de wijzigingen door te voeren.
 
@@ -156,3 +156,31 @@ Is de Windows installatie stuk (zoals BitLocker vergrendeld, zonder recovery key
 6. Verplaats bestanden in `C:\SWSetup\SP...\F6` naar de tweede USB stick
 7. Start de Windows installer en probeer Windows te installeren, tot het mis als Windows geen disks kan vinden.
 8. Steek de tweede USB stick in de computer en probeer de driver te laden met "Load Driver". Staat de USB stick niet in de "Browse" lijst? Open een command prompt (<kbd>Shift</kbd>+<kbd>F10</kbd>). Nu kun je de USB een letter geven met diskpart.
+
+## Schakelen van HWE kernel naar standaard kernel
+
+```
+sudo apt remove linux-generic-hwe-22.04
+sudo apt install linux-generic
+```
+
+Reboot nu naar de niet-HWE kernel (via advanced options in GRUB). Als dat werkt, kan je de oude kernel(s) verwijderen. Dit commando helpt bij het vinden van geïnstalleerde kernels:
+```
+apt list --installed 'linux*'
+```
+
+## Mainline kernel installeren
+
+Mainline kernels worden niet ondersteund door Canonical en zijn unsigned. Zet dus eerst secure boot uit!
+
+**Handmatige manier**
+1. Ga naar de [mainline kernel archive](https://kernel.ubuntu.com/~kernel-ppa/mainline/)
+2. Kies de meest recente stabiele versie
+3. Download de deb packages via de links onder "Test amd64/build succeeded". Het kan zijn dat er "failed" staat zonder downloadlinks, kies dan een oudere kernel tot je wel downloadlinks kan vinden.
+4. Installeer alle debs (bijv. via `dpkg -i *.deb`)
+
+**Via shell script**
+1. Download het script: `wget https://github.com/pimlie/ubuntu-mainline-kernel.sh/raw/master/ubuntu-mainline-kernel.sh`
+2. Maak executable: `chmod +x ubuntu-mainline-kernel.sh`
+3. Zoek naar kernel versies: `./ubuntu-mainline-kernel.sh -r`
+4. Installeer een kernel: `./ubuntu-mainline-kernel.sh -i <versie>`
