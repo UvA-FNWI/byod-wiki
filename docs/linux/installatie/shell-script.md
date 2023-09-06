@@ -1,20 +1,20 @@
 # Shell script
 
 !!! hint "Internetverbinding"
-    Als je net Linux hebt geïnstalleerd is het nodig eerst [verbinding te maken met eduroam](../eduroam.md). Het "Amsterdam Science Park" open netwerk is langzaam en instabiel.
+    Als je net Linux hebt geïnstalleerd is het nodig eerst [verbinding te maken met eduroam](../eduroam.md). Het "Amsterdam Science Park" open netwerk is te langzaam en instabiel.
 
 ## Gebruik van het script
 
 Open allereerst een terminal: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>
 
-!!! hint
-    In een terminal gebruik je niet <kbd>Ctrl</kbd>+<kbd>V</kbd>, maar <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. Hetzelfde geldt voor <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+!!! hint "Terminaltips"
+    In een terminal gebruik je niet <kbd>Ctrl</kbd>+<kbd>V</kbd>, maar <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. Hetzelfde geldt voor <kbd>Ctrl</kbd>+<kbd>C</kbd>. Bij het intypen van je wachtwoord zul je geen karakters zien verschijnen. Het sudo-wachtwoord is hetzelfde als waarmee je inlogt.
 
 ### Alles installeren
 
 Plak de volgende regel in je terminal, druk op enter en vul je wachtwoord in:
 ```
-sudo bash -c "$(wget -q -O - https://raw.githubusercontent.com/UvA-FNWI/byod-scripts/master/install-extras.sh)"
+sh -c "$(wget -q -O - https://linux.datanose.nl/script)"
 ```
 
 ### Interactief
