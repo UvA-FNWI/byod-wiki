@@ -1,8 +1,8 @@
-FROM python:3.11 AS builder
+FROM python:3.12 AS builder
 
 COPY requirements.txt /
 
-RUN pip install -r /requirements.txt
+RUN pip install --no-cache-dir -r /requirements.txt
 
 WORKDIR /tmp/build
 COPY . .
