@@ -47,37 +47,38 @@ bootrec /rebuildbcd
 
 Zoals hierboven maar met `bootrec /fixmbr` ipv `bcdboot`. Maar misschien wil je de Windows installatie wel converteren naar UEFI met `mbr2gpt`? Of opnieuw installeren als de installatie niet belangrijk is? EFI is een stuk makkelijker om mee te werken.
 
-## Debian, Ubuntu boot reparatie (UEFI)
+## Linux boot reparatie (UEFI)
 
-Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
+Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`. Let ook op dat je deze partitie toevoegd aan `/etc/fstab` tijdens chroot.
 
-1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
+1. Boot een Ubuntu live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
 2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte. Of volg anders de speciale instructies voor LUKS/LVM/btrfs.
 3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
 4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
 5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
-6. Voor de zekerheid, controleer dat grub geïnstalleerd is: `apt install grub-efi shim-signed`. En niet de legacy grub: `apt remove grub-pc`
-7. Installeer grub naar `/boot/efi` met: `grub-install`
-8. Voor de zekerheid, genereer initramfs bestanden: `update-initramfs -u -k all`
-9. Ter controle: `update-grub` (hier zie je als het goed is al je initramfs bestanden langskomen, en eventueel Windows via os-prober)
+6. Ga nu verder met de specifieke stappen voor je besturingssysteem
 
-## Fedora boot reparatie (UEFI)
+### Debian, Ubuntu
 
-Deze instructies werken ook voor het omzetten van legacy boot naar EFI boot. Dan moet je wel zelf de ESP (EFI System Partition) maken, met bijvoorbeeld `gparted` of `fdisk`.
+1. Verwijder de legacy grub (`apt remove grub-pc`) en installeer UEFI grub (`apt install grub-efi shim-signed`)
+2. Installeer grub naar `/boot/efi` met: `grub-install`
+3. Voor de zekerheid, genereer initramfs bestanden: `update-initramfs -u -k all`
+4. Ter controle: `update-grub` (hier zie je als het goed is al je initramfs bestanden langskomen, en eventueel Windows via os-prober)
 
-Hier gaan we uit van een ext4 root partitie. Brtfs heeft misschien andere commands nodig voor het eerste gedeelte?
+### Fedora
 
-1. Boot een live USB, en open een terminal. Verkrijg een root shell (`sudo -i`).
-2. Mount de root partitie: `mount /dev/<part> /mnt`. Je kan de juiste partitie vinden met `lsblk -f`, zoek voor een ext4 filesystem met de juiste grootte. Of volg anders de speciale instructies voor LUKS/LVM/btrfs.
-3. Mount de EFI partitie in `/mnt/boot/efi` (als deze map niet bestaat heb je iets fout gedaan, of je systeem gebruikt legacy boot). De EFI partitie kan je ook vinden met `lsblk -f`, zoek dit keer voor een kleine vfat/fat32 filesystem (vaak 50-500 MB).
-4. Bind-mount een aantal filesystems: `for i in /dev /dev/pts /proc /sys /run /sys/firmware/efi/efivars; do mount -B $i /mnt$i; done`
-5. Chroot: `chroot /mnt`. Nu zit je "in" je normale besturingssysteem, in plaats van het live besturingssysteem.
-6. Herinstalleer grub: `dnf reinstall grub2-efi grub2-efi-modules shim`. Dit zorgt er ook meteen voor dat de nodige bestanden in `/boot/efi` worden aangemaakt. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
-7. Voor de zekerheid, genereer initramfs bestanden: `dracut --regenerate-all -vf`
-8. Voor de zekerheid, update de grub config:
+1. Herinstalleer grub: `dnf reinstall grub2-efi grub2-efi-modules shim`. Dit zorgt er ook meteen voor dat de nodige bestanden in `/boot/efi` worden aangemaakt. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
+2. Voor de zekerheid, genereer initramfs bestanden: `dracut --regenerate-all -vf`
+3. Voor de zekerheid, update de grub config:
     - `grub2-mkconfig -o /boot/grub2/grub.cfg`
 
 Meer informatie kun je [hier](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#installing-grub-2-configuration-on-uefi-system) vinden.
+
+### Arch linux
+1. Verwijder legacy grub (`grub-legacy`) en zorg dat de `grub` package geinstallerd is.
+2. Gebruik `grub-install --target=x86_64-efi` om grub te installeren
+
+Meer informatie is te vinden [op de Arch Wiki](https://wiki.archlinux.org/title/GRUB).
 
 ## Boot reparatie met LUKS
 
