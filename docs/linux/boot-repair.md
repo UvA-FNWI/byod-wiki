@@ -25,9 +25,9 @@ Sommige laptops kunnen helemaal niet booten van EFI bestanden behalve `\EFI\Micr
 
 Het kan gebeuren dat je per ongeluk je EFI partitie of bestanden erop verwijderd. Met het `bcdboot` commando kun je ze opnieuw genereren. Deze instructies kunnen ook helpen als Windows niet meer opstart na het verplaatsen, vergoten, of verkleinen van `C:`.
 
-Als je nog geen EFI System Partition (ESP) hebt, maak er dan eerst een aan. Bijvoorbeeld, met gparted op een live USB. Je hebt niet veel ruimte nodig, met 512MB heb je sowieso genoeg. De partitie moet een FAT32 filesystem bevatten. Na het maken van de partitie, klik met de rechtermuisknop op de partitie en kies voor "Manage flags". Zet vervolgens "esp" aan.
+Als je nog geen EFI System Partition (ESP) hebt, maak er dan eerst een aan. Bijvoorbeeld, met gparted op een live USB. Je hebt niet veel ruimte nodig, met 512MiB heb je sowieso genoeg. De partitie moet een FAT32 filesystem bevatten. Na het maken van de partitie, klik met de rechtermuisknop op de partitie en kies voor "Manage flags". Zet vervolgens "esp" aan.
 
-Mocht je al een ESP hebben, is het alsnog een goed idee om het type te verifiëren. Dit kan bijvoorbeeld binnen Linux met fdisk. `sudo fdisk /dev/<disk>` en vervolgens `i`. **Je EFI System Partition hoort een Type-UUID van `C12A7328-F81F-11D2-BA4B-00A0C93EC93B` te hebben**. Mocht het niet zo zijn, kan je het type veranderen met `t`. Als je ESP het verkeerde type heeft zal Windows grotendeels lijken te werken, maar functies zoals slaapstand, opstartopties, en windows update werken mogelijk niet goed.
+Mocht je al een ESP hebben, is het alsnog een goed idee om het type te verifiëren. Dit kan bijvoorbeeld binnen Linux met fdisk. `sudo fdisk /dev/<disk>` en vervolgens `p`. Je EFI System Partition hoort het type "EFI System" te hebben. Mocht het niet zo zijn, kan je het type veranderen met `t`. Als je ESP het verkeerde type heeft zal Windows grotendeels lijken te werken, maar functies zoals slaapstand, opstartopties, en windows update werken mogelijk niet goed.
 
 Boot naar een Windows USB en open een command prompt. Dit kan via het recovery menu of met Shift+F10.
 
@@ -39,9 +39,7 @@ bcdboot C:\Windows /s E: /f UEFI /v
 ```
 
 Repareer ook de BCD:
-
 ```
-bootrec /fixboot
 bootrec /rebuildbcd
 ```
 
@@ -77,15 +75,13 @@ Hier gaan we uit van een ext4 root partitie. Brtfs heeft misschien andere comman
 6. Herinstalleer grub: `dnf reinstall grub2-efi grub2-efi-modules shim`. Dit zorgt er ook meteen voor dat de nodige bestanden in `/boot/efi` worden aangemaakt. Gebruik **NIET** `grub2-install`, dat is alleen voor legacy boot.
 7. Voor de zekerheid, genereer initramfs bestanden: `dracut --regenerate-all -vf`
 8. Voor de zekerheid, update de grub config:
-    - `grub2-mkconfig -o /etc/grub2.cfg`
-    - `grub2-mkconfig -o /etc/grub2-efi.cfg`
     - `grub2-mkconfig -o /boot/grub2/grub.cfg`
 
 Meer informatie kun je [hier](https://docs.fedoraproject.org/en-US/quick-docs/bootloading-with-grub2/#installing-grub-2-configuration-on-uefi-system) vinden.
 
 ## Boot reparatie met LUKS
 
-Installeer de `cryptsetup` package (als het goed is al geïnstalleerd).
+Installeer de `cryptsetup` package (al geïnstalleerd op Ubuntu Live USB).
 
 Open de disk:
 ```
