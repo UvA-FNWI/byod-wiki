@@ -7,12 +7,23 @@
 
 Zorg dat je USB stick nu aangesloten is.
 
-Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf deze USB-stick (in tegenstelling tot de interne SSD). Er zijn verschillende manieren om dit te doen. Hieronder staan 4 manieren beschreven, kies welke het makkelijkst lijkt. Mocht het niet lukken kun je een andere methode kiezen.
+Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf deze USB-stick (in tegenstelling tot de interne SSD). Er zijn verschillende manieren om dit te doen. Hieronder staan 4 manieren beschreven, ongeveer van makkelijk naar moeilijk. Mocht het niet lukken kun je een andere methode kiezen.
 
 !!! info "Welke boot optie moet ik hebben?"
     Waarschijnlijk heet de goede optie "Ubuntu", "Linpus lite", "USB Disk", "USB HDD".
 
-1. **UEFI-opstartmenu**
+Kies één van de onderstaande opties:
+
+1. **Windows opstartmenu**
+    Net als de UEFI firmware heeft Windows ook een opstartmenu.
+
+    Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de Shift toets ingedrukt terwijl je op de optie om te herstarten klikt. Er verschijnt dan een menu.
+
+    Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Troubleshooting` (Problemen Oplossen), dan Geavanceerde opties, `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
+
+    Heb je niet de "Use a device" optie? Dan gebruikt je laptop waarschijnlijk legacy boot, niet UEFI boot. Vraag iemand van de laptophelpdesk om hulp.
+
+2. **UEFI-opstartmenu**
     Veel laptops hebben een toets die je kan indrukken tijdens het opstarten, waardoor de laptop een opstartmenu geeft. In dit menu kan je selecteren van welk apparaat de laptop moet opstarten, in dit geval de USB-stick.
 
     De exacte toets kan je vinden op het internet met een zoekterm zoals "boot menu key <laptop model>".
@@ -23,15 +34,6 @@ Nadat je een USB met Ubuntu erop gemaakt hebt, moet je laptop opstarten vanaf de
     * HP: <kbd>Esc</kbd> / <kbd>F9</kbd> / <kbd>F10</kbd>
     * Lenovo: <kbd>F12</kbd>
     * Lenovo thinkpad: <kbd>F1</kbd>
-
-2. **Windows opstartmenu**
-    Net als de UEFI firmware heeft Windows ook een opstartmenu.
-
-    Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de Shift toets ingedrukt terwijl je op de optie om te herstarten klikt. Er verschijnt dan een menu.
-
-    Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Troubleshooting` (Problemen Oplossen), dan Geavanceerde opties, `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
-
-    Heb je niet de "Use a device" optie? Dan gebruikt je laptop waarschijnlijk legacy boot, niet UEFI boot. Vraag iemand van de laptophelpdesk om hulp.
 
 3. **UEFI firmware settings, via toets bij opstarten**
     In de UEFI firmware settings kan je de opstartvolgorde veranderen. In tegenstelling tot het opstartmenu waar je eenmalig een apparaat kiest, stel je in de UEFI firmware settings permanent[^1] een apparaat in om van op te starten.
