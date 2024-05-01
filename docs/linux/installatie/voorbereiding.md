@@ -25,7 +25,7 @@ Nadat je Rufus hebt geopend:
 3. Zet `Partition scheme` op `GPT`
 4. Druk op <kbd>START</kbd> en dan twee keer <kbd>OK</kbd>
 
-![rufus](../../assets/rufus.png)
+![rufus](../../assets/2404/rufus.jpg)
 
 ## Fast start-up uitschakelen
 *Fast start-up* is een techniek om het opstarten van Windows te versnellen, door bij het afsluiten na het beëindigen van de gebruikerssessie in sluimerstand te gaan, waarbij de systeemstaat naar de harde schijf wordt geschreven om ingeladen te worden wanneer de computer weer opstart. Fast start-up (en sluimerstand in het algemeen) maakt het onveilig om naar je Windows-partitie te schrijven vanuit Linux. Tijdens de Ubuntu installer wordt de Windows partitie verkleind om ruimte te maken voor Ubuntu, dus is het nodig om fast start-up uit te schakelen.
