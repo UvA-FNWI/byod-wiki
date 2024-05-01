@@ -12,7 +12,7 @@ Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS g
 
 ## USB-voorbereiding
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
-Zorg allereerst dat je een lege USB-stick van minstens 4 GiB hebt, en sluit deze aan op je computer.
+Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze aan op je computer.
 
 Download vervolgens het ISO-bestand van de [64-bit versie van Ubuntu 22.04](https://ubuntu.com/download/desktop/thank-you?version=22.04.3&architecture=amd64).
 
