@@ -1,5 +1,3 @@
-# Installatie
-
 ## Opstarten vanaf USB-stick
 
 !!! info "Wat is UEFI?"
@@ -127,8 +125,7 @@ Vervolgens kom je als normaal in GRUB.
 
 Je komt na het opstarten als het goed is in GRUB, waar je kunt kiezen om Ubuntu of Windows op te starten. Als je Ubuntu kiest, of lang genoeg wacht, start Ubuntu op. Je kunt nu inloggen en krijgt een "What's new in Ubuntu"-scherm te zien. Hierin wordt gevraagd of je Livepatch wilt aanzetten (kan, maar hoeft niet) en of je enkele systeeminformatie door wilt sturen naar Canonical om Ubuntu te verbeteren. Je kan even naar het rapport kijken; het bevat geen gevoelige informatie, maar voel je vrij het uit te zetten.
 
-## Software installatie
-
-Nu Ubuntu succesvol is geïnstalleerd, kan je de [shell script](./shell-script.md) gebruiken om benodigde software te installeren.
+!!! success "Installatie compleet"
+    Ubuntu is nu succesvol geïnstalleerd. Je kunt nu door naar de [post-installatie](./post-installatie.md).
 
 [^1]: Als je de USB-stick uit je laptop haalt, zal je laptop hoogstwaarschijnlijk automatisch de opstartvolgorde aanpassen zodat de SSD weer het primaire opstartapparaat is.
