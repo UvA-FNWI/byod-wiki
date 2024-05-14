@@ -9,12 +9,16 @@ Deze stappen zullen we nu doorlopen.
 
 # Verbinding maken met internet
 
---8<-- "docs/linux/eduroam.md"
+{%
+    include-markdown "../eduroam.md"
+%}
 
 # Installeren van benodigde software
 Bij je studie zul je gebruik moeten maken van allerhande software. Daarom hebben we een tooltje dat deze software voor je installeert.
 
---8<-- "docs/linux/installatie/shell-script-inner.md"
+{%
+    include-markdown "./shell-script-inner.md"
+%}
 
 !!! success "Klaar!"
     Als je al deze stappen hebt doorlopen ben je klaar met de installatie! Kijk even of alles nog werkt (opstarten in Windows, opstarten in Ubuntu), en geniet verder van de rest van je dag!

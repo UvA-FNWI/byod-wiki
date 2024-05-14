@@ -1,7 +1,9 @@
 !!! hint "Internetverbinding"
     Als je net Linux hebt geïnstalleerd is het nodig eerst [verbinding te maken met eduroam](../eduroam.md). Het "Amsterdam Science Park" open netwerk is te langzaam en instabiel.
 
---8<-- "docs/linux/installatie/shell-script-inner.md"
+{%
+    include-markdown "./shell-script-inner.md"
+%}
 
 <!--
 

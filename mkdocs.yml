@@ -8,12 +8,12 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.snippets:
-      check_paths: true
 plugins:
   - search
   - git-revision-date-localized:
       type: datetime
+  - include-markdown:
+      rewrite_relative_urls: true
 extra_css:
   - stylesheets/extra.css
 extra:
