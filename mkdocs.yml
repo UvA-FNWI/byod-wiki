@@ -12,6 +12,8 @@ plugins:
   - search
   - git-revision-date-localized:
       type: datetime
+  - include-markdown:
+      rewrite_relative_urls: true
 extra_css:
   - stylesheets/extra.css
 extra:
@@ -63,11 +65,12 @@ nav:
     - 'Laptopkeuze': 'linux/laptopkeuze.md'
     - 'Veelvoorkomende Problemen': 'linux/problemen.md'
     - 'Opstartproblemen': 'linux/boot-repair.md'
-    - 'Installatie':
+    - 'Installatiehandleiding':
       - 'Overzicht': 'linux/installatie/index.md'
-      - '1. Voorbereiding': 'linux/installatie/voorbereiding.md'
-      - '2. Installatie': 'linux/installatie/installatie.md'
-      - '3. Shell script': 'linux/installatie/shell-script.md'
+      - '1 - Voorbereiding': 'linux/installatie/voorbereiding.md'
+      - '2 - Installatie': 'linux/installatie/installatie.md'
+      - '3 - Post-installatie': 'linux/installatie/post-installatie.md'
+      - 'Shell script': 'linux/installatie/shell-script.md'
       - 'USB herstellen na dd': 'linux/installatie/usb-herstellen.md'
       - 'BitLocker': 'linux/installatie/bitlocker.md'
   - 'macOS':

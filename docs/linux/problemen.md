@@ -20,13 +20,17 @@ Zet de laptop uit en weer aan, als het goed is wordt dan de rtl8821ce-driver gel
 
 ## RTL 8168 / 8169 / 8101 / 8111
 
-Het kan zijn dat deze chipsets niet goed werken met dual boot. De Windows driver schakeld namelijk de netwerkkaart uit bij het afsluiten, en daar kan de Linux driver niet mee omgaan.
+Het kan zijn dat deze chipsets niet goed werken met dual boot. De Windows driver schakelt namelijk de netwerkkaart uit bij het afsluiten, en daar kan de Linux driver niet mee omgaan.
 
 Wake-On-Lan aanzetten binnen Windows zou dit probleem moeten oplossen. Deze optie kun je vinden in device manager bij de netwerkkaart.
 
 Je kan ook de laptop volledig uitzetten, een tijdje wachten (~10 sec), en weer opstarten.
 
 Meer informatie: https://en.opensuse.org/SDB:Realtek_8169_driver_problem
+
+## Wi-Fi werkt alleen bij opnieuw opstarten vanuit Windows
+
+Als Wi-Fi alleen werkt na het opnieuw opstarten vanuit Windows, en dus niet bij het afsluiten en opstarten, controleer eerst of fast startup wel uit staat. Het niet netjes afsluiten binnen Windows kan namelijk de netwerkkaart in een staat laten waar de Linux driver niet mee om kan gaan. Instructies hiervoor vindt je [hier](installatie/voorbereiding.md).
 
 ## Intel RST / Disk in RAID-modus / Linux ziet de disk niet
 

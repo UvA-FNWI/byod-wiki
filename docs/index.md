@@ -4,8 +4,9 @@ De bachelors Informatica en Kunstmatige Intelligentie laten studenten zelf een l
 
 Op deze wiki zou je alle informatie, die je nodig zult hebben om je laptop te kunnen gebruiken tijdens de computerpractica, moeten kunnen vinden.
 
-Belangrijke pagina's:
+Als je hier bent op de introductiedag, zoek je waarschijnlijk naar de [installatiehandleiding voor Linux](./linux/installatie/voorbereiding.md).
+
+Overige belangrijke pagina's:
 
 - [Eduroam](./eduroam.md)
-- [Linux installeren](./linux/installatie/voorbereiding.md)
 - [Helpdesk](./helpdesk.md)

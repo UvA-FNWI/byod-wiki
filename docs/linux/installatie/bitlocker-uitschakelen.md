@@ -24,3 +24,6 @@ In instellingen, zoek op 'BitLocker' en selecteer 'Manage BitLocker'. Als je dez
 Zet vervolgens BitLocker uit:
 
 ![BitLocker uitzetten](../../assets/win11-bitlocker-turn-off.png)
+
+!!! success "Bitlocker uitgeschakeld"
+    Als Bitlocker uitgeschakeld is en je schijf ontsleuteld is kan je verder met [de installatie](./installatie.md).

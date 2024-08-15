@@ -1,5 +1,3 @@
-# Installatie
-
 ## Opstarten vanaf USB-stick
 
 !!! info "Wat is UEFI?"
@@ -61,43 +59,56 @@ Zodra je laptop is opgestart vanaf de USB-stick krijg je een keuzemenu te zien, 
 
 Als de installatiewizard is opgestart dan zal als eerste een taalkeuzemenu verschijnen. Hiermee wordt de taal van het besturingssysteem ingesteld dat we gaan installeren. Hier adviseren we ook om Engels te kiezen, omdat het dan makkelijker is om documentatie raad te plegen, hulp te vragen, etc.
 
-Kies "Install Ubuntu" en volg de instructies om het te installeren.
+![Welcome screen](../../assets/2404/installer-welcome.jpg)
 
-![welcome](../../assets/2204-installer-welcome.png)
+Daarna zal je gevraagd worden of je toegankelijkheidshulpmiddelen wilt gebruiken. Doe dit desgewenst, en klik dan op Next.
 
-Er zal je gevraagd worden om je toetsenbordindeling te kiezen. Als je gebruik wilt maken van de toetsencombinaties als " + e om het teken 'é' te vormen, kies dan "English (US) - English (US, intl., with dead keys)", anders kies voor English (US). Deze keuze is altijd later aan te passen en het is dan ook mogelijk om meerdere layouts toe te voegen.
+![Accessibility](../../assets/2404/accessibility.jpg)
 
-![Keyboard](../../assets/2204-keyboard.png)
+Er zal je gevraagd worden om je toetsenbordindeling te kiezen. Als je gebruik wilt maken van de toetsencombinaties als " + e om het teken 'é' te vormen, kies dan "English (US)", met variant "English (US, intl., with dead keys)", anders kies voor English (US). Deze keuze is altijd later aan te passen en het is dan ook mogelijk om meerdere layouts toe te voegen.
+
+![Keyboard layout => English (US)](../../assets/2404/keyboard.jpg)
 
 Als je wordt gevraagd om verbinding te maken met een Wi-Fi netwerk, kies ervoor om het niet te doen. Een internetverbinding is niet nodig en niet verbinden bespaart tijd.
 
+![Internet => Do not connect](../../assets/2404/no-internet.png)
+
+In de volgende paar schermen kun je gewoon de standaardkeuzes laten staan: _Install Ubuntu_, _Interactive installation_ en _Default selection_.
+
+![Try or Install Ubuntu => Install Ubuntu](../../assets/2404/install-ubuntu.jpg)
+
+![Type of Installation => Interactive](../../assets/2404/interactive-install.jpg)
+
+![Applications => Default selection](../../assets/2404/default-selection.jpg)
+
 Het scherm daarna zal je vragen software van derden te installeren, vink deze aan. Waarschijnlijk wordt hier gevraagd wordt om een wachtwoord om Secure Boot te configureren. Dit wachtwoord heb je eenmalig nodig na de Ubuntu installatie bij "Perform MOK management". Het is niet het wachtwoord van je gebruikersaccount, het hoeft niet bijzonder veilig te zijn en je zult het wachtwoord hierna nooit meer nodig hebben.
 
-![Software](../../assets/2204-software.png)
+![Software](../../assets/2404/install-recommended.jpg)
 
-Mogelijk krijg je hierna een waarschuwing scherm met een melding dat hij Ubuntu niet kan installeren ivm BitLocker of Intel RST. In het geval van BitLocker, zie de [BitLocker-pagina](./bitlocker.md).
+Bij _Disk setup_ wil je kiezen voor _Install Ubuntu alongside Windows Boot Manager_.
+
+Als je deze optie niet hebt (dus alleen "erase disk" en "manual installation"), gebruik je misschien geen UEFI of is er wat anders aan de hand. Vraag om hulp aan iemand van de laptophelpdesk. Kies in ieder geval niet voor "erase disk" tenzij je zeker weet dat je al je huidige data binnen Windows wilt verwijderen.
+
+![Disk setup => Install alongside](../../assets/2404/install-alongside.jpg)
+
+Mogelijk krijg je hierna een waarschuwingsscherm met een melding dat hij Ubuntu niet kan installeren ivm BitLocker of Intel RST. In het geval van BitLocker, zie de [BitLocker-pagina](./bitlocker.md).
+
 In het geval van Intel RST staan er instructies op de '[Veelvoorkomende problemen](../problemen.md)'-pagina, maar we raden sterk aan om hulp te vragen.
 
-![BitLocker](../../assets/2204-bitlocker.png)
+![BitLocker](../../assets/2404/bitlocker.jpg)
 
-In het scherm daarna zal je gevraagd worden hoe je Ubuntu precies wilt installeren. Selecteer hier de optie "Install Ubuntu alongside Windows Boot Manager".
-
-Als je deze optie niet hebt (dus alleen "erase disk" en "something else"), gebruik je misschien geen UEFI of is er wat anders aan de hand. Vraag om hulp aan iemand van de laptophelpdesk. Kies in ieder geval niet voor "erase disk" tenzij je zeker weet dat je al je huidige data binnen Windows wilt verwijderen.
-
-![Installation type](../../assets/2004-installationtype.png)
-
-In het scherm erna kun je kiezen op welke schijf je Linux Ubuntu gaat installeren, en hoeveel ruimte je wilt toewijzen aan beide besturingssystemen. De installatiewizard zal je dan vragen of je zeker weet dat je wilt doen, omdat de bewerkingen die gedaan zullen worden niet ongedaan gemaakt kunnen worden. Bevestig dat je dit wilt doen. Zorg ervoor dat je Ubuntu voldoende ruimte geeft, aangezien het een uitdaging is dit later te op te hogen. Ga ervan uit dat je voor software uiteindelijk tussen de twintig en veertig gigabyte nodig gaat hebben, en ook nog gebruikersbestanden kwijt wilt. De basisinstallatie van Ubuntu neemt rond de zeven gigabyte in beslag. Het is dus verstandig om Ubuntu 50-100GB te geven afhankelijk van hoeveel capaciteit je over hebt.
+Als alles goed is krijg je een scherm te zien waarop je de schijfruimte kunt verdelen tussen Ubuntu en Windows. Zorg ervoor dat je Ubuntu voldoende ruimte geeft, aangezien het een uitdaging is dit later te op te hogen. Ga ervan uit dat je voor software uiteindelijk tussen de twintig en veertig gigabyte nodig gaat hebben, en ook nog gebruikersbestanden kwijt wilt. De basisinstallatie van Ubuntu neemt rond de zeven gigabyte in beslag. Het is dus verstandig om Ubuntu 50-100GB te geven afhankelijk van hoeveel capaciteit je over hebt.
 
 !!! info "Laptops met meerdere schijven"
     Ubuntu vraagt niet naar welke schijf de bootloader geïnstalleerd moet worden en, als je al een bestaand besturingssyteem met EFI partitie op een andere schijf hebt staan, wordt deze mogelijk overschreven! Dit is meestal geen probleem, het is juist handig. Stel je hebt Windows op schijf A en je installeert Ubuntu naar schijf B, dan wil je de GRUB op schijf A hebben zodat als je laptop vanaf schijf A opstart, GRUB je laat kiezen tussen Windows en Ubuntu. Mocht je niet willen dat je bootloader wordt overschreven, zodat je via je UEFI boot menu tussen EFI partities op de twee schijven kan kiezen, let hier wel op.
 
-![Installation space](../../assets/2004-installationspace.png)
+![Installation space](../../assets/2404/install-alongside-2.jpg)
 
 De laatste paar stappen wijzen zichzelf grotendeels. Een scherm met een wereldkaart zal verschijnen; op basis van de keuze van het land zal de tijdszone, valuta, decimale scheiding et cetera bepaald worden. Hierna wordt gevraagd om enige personalia en wordt een gebruikersaccount aangemaakt. Op Linux is de voorkeur om de gebruikersnaam en de computernaam in kleine letters te schrijven (bijvoorbeeld `voornaam` en `voornaam-laptop`).
 
 Daarna zal de installatie beginnen. Dit zal ongeveer een kwartier tot een uur duren afhankelijk van je laptop. Als de installatie klaar is zal een dialoog verschijnen met de vraag of je wilt herstarten. Herstart het systeem.
 
-![install done](../../assets/2204-installdone.png)
+![install done](../../assets/2404/install-done.png)
 
 Tijdens het herstarten zal een melding verschijnen waarin staat dat je het installatiemedium moet verwijderen. Verwijder de USB-stick, en druk dan op de Enter-toets. Ubuntu zal dan opstarten.
 
@@ -127,8 +138,7 @@ Vervolgens kom je als normaal in GRUB.
 
 Je komt na het opstarten als het goed is in GRUB, waar je kunt kiezen om Ubuntu of Windows op te starten. Als je Ubuntu kiest, of lang genoeg wacht, start Ubuntu op. Je kunt nu inloggen en krijgt een "What's new in Ubuntu"-scherm te zien. Hierin wordt gevraagd of je Livepatch wilt aanzetten (kan, maar hoeft niet) en of je enkele systeeminformatie door wilt sturen naar Canonical om Ubuntu te verbeteren. Je kan even naar het rapport kijken; het bevat geen gevoelige informatie, maar voel je vrij het uit te zetten.
 
-## Software installatie
-
-Nu Ubuntu succesvol is geïnstalleerd, kan je de [shell script](./shell-script.md) gebruiken om benodigde software te installeren.
+!!! success "Installatie compleet"
+    Ubuntu is nu succesvol geïnstalleerd. Je kunt nu door naar de [post-installatie](./post-installatie.md).
 
 [^1]: Als je de USB-stick uit je laptop haalt, zal je laptop hoogstwaarschijnlijk automatisch de opstartvolgorde aanpassen zodat de SSD weer het primaire opstartapparaat is.
