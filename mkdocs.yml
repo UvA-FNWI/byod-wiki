@@ -58,6 +58,7 @@ nav:
     - 'Linux': 'linux/index.md'
     - 'Eduroam': 'linux/eduroam.md'
     - 'UvA VPN': 'linux/vpn.md'
+    - 'eduVPN': 'linux/eduvpn.md'
     - 'Printen': 'linux/printen.md'
     - 'Backups': 'linux/backups.md'
     - 'Onderhoud': 'linux/onderhoud.md'

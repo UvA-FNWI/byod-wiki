@@ -1,5 +1,8 @@
 # UvA VPN
 
+!!! info "eduVPN"
+    De UvA biedt nu ook een alternatieve VPN: [eduvpn](./eduvpn.md).
+
 Door middel van UvA VPN is het mogelijk om vanaf thuis een verbinding te maken met het netwerk van de UvA. Zo kun je bijvoorbeeld vanaf thuis inloggen op servers die alleen toegankelijk zijn vanaf het UvA-netwerk (bijvoorbeeld het DAS5-cluster).
 
 ## Optie 1: Via NetworkManager (makkelijkst)
@@ -50,6 +53,6 @@ sudo openconnect --protocol=nc vpn.uva.nl -s 'vpn-slice 130.37.199.8 83.96.0.0/1
 
 Dit voorbeeld omvat veelvoorkomende IP adressen. Het kan zijn dat je zelf een IP adres moet toevoegen, als je wilt verbinden met een andere dienst.
 
-- `130.37.199.8` DAS5 voor DPP
+- `130.37.199.8/32` DAS5 voor DPP
 - `83.96.0.0/16 85.10.0.0/16` Webtechnologies 2023
 - `145.18.0.0/16` Verschillende UvA diensten, zoals UvA-Q (AS1124)
