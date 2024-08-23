@@ -14,7 +14,10 @@ Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS g
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
 Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze aan op je computer.
 
-Download vervolgens het ISO-bestand van de [64-bit versie van Ubuntu 24.04](https://ubuntu.com/download/desktop/thank-you?version=24.04&architecture=amd64&lts=true).
+Download vervolgens het ISO-bestand van de laatste daily build van [Ubuntu 24.04.1](https://byod.segfault.party/noble-desktop-amd64.iso).
+
+!!! info "Geüpdatete ISO"
+    Sinds 23 augustus gebruiken we *niet* de ISO die beschikbaar is op de Ubuntu-website (`ubuntu-24.04-desktop-amd64.iso`), maar specifiek de daily build die beschikbaar is via de link hierboven. Als je je USB-stick al voorbereid hebt met de oude ISO zul je dit helaas opnieuw moeten doen -- hiermee werken we om een [specifiek opstartprobleem](../sbat.md) heen.
 
 Download het programma [Rufus](https://github.com/pbatard/rufus/releases/download/v4.4/rufus-4.4p.exe); een klein programma waarmee je de ISO naar de usb-stick kan schrijven, zonder handmatig partities te maken en bestanden te kopiëren.
 
@@ -25,7 +28,7 @@ Nadat je Rufus hebt geopend:
 3. Zet `Partition scheme` op `GPT`
 4. Druk op <kbd>START</kbd> en dan twee keer <kbd>OK</kbd>
 
-![rufus](../../assets/2404/rufus.jpg)
+![rufus](../../assets/2404/rufus.png)
 
 ## Fast start-up uitschakelen
 *Fast start-up* is een techniek om het opstarten van Windows te versnellen, door bij het afsluiten na het beëindigen van de gebruikerssessie in sluimerstand te gaan, waarbij de systeemstaat naar de harde schijf wordt geschreven om ingeladen te worden wanneer de computer weer opstart. Fast start-up (en sluimerstand in het algemeen) maakt het onveilig om naar je Windows-partitie te schrijven vanuit Linux. Tijdens de Ubuntu installer wordt de Windows partitie verkleind om ruimte te maken voor Ubuntu, dus is het nodig om fast start-up uit te schakelen.
