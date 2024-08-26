@@ -16,7 +16,10 @@ Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze
 
 Download vervolgens het ISO-bestand van de laatste daily build van [Ubuntu 24.04.1](https://byod.segfault.party/noble-desktop-amd64.iso).
 
-!!! info "Geüpdatete ISO"
+!!! tip "Eduroam"
+    Zorg ervoor dat je met het wifi-netwerk `eduroam` verbonden bent als je het ISO-bestand downloadt; de open wifi is erg traag. Om met `eduroam` te verbinden kan je de tool gebruiken op [het wifi-portal](https://wifiportal.uva.nl).
+
+!!! note "Geüpdatete ISO"
     Sinds 23 augustus gebruiken we *niet* de ISO die beschikbaar is op de Ubuntu-website (`ubuntu-24.04-desktop-amd64.iso`), maar specifiek de daily build die beschikbaar is via de link hierboven. Als je je USB-stick al voorbereid hebt met de oude ISO zul je dit helaas opnieuw moeten doen -- hiermee werken we om een [specifiek opstartprobleem](../sbat.md) heen.
 
 Download het programma [Rufus](https://github.com/pbatard/rufus/releases/download/v4.4/rufus-4.4p.exe); een klein programma waarmee je de ISO naar de usb-stick kan schrijven, zonder handmatig partities te maken en bestanden te kopiëren.
