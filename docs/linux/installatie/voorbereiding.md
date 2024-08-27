@@ -16,6 +16,9 @@ Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze
 
 Download vervolgens het ISO-bestand van de laatste daily build van [Ubuntu 24.04.1](https://byod.segfault.party/noble-desktop-amd64.iso).
 
+!!! note "Geleende USB-stick?"
+    Als je een USB-stick van een van onze helpers hebt geleend, hoef je de USB-voorbereiding niet opnieuw te doen. Je kunt dan verder naar het kopje **Fast start-up uitschakelen**.
+
 !!! tip "Eduroam"
     Zorg ervoor dat je met het wifi-netwerk `eduroam` verbonden bent als je het ISO-bestand downloadt; de open wifi is erg traag. Om met `eduroam` te verbinden kan je de tool gebruiken op [het wifi-portal](https://wifiportal.uva.nl).
 
