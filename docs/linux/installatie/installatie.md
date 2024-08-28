@@ -15,7 +15,7 @@ Kies één van de onderstaande opties:
 1. **Windows opstartmenu**
     Net als de UEFI firmware heeft Windows ook een opstartmenu.
 
-    Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de Shift toets ingedrukt terwijl je op de optie om te herstarten klikt. Er verschijnt dan een menu.
+    Open in Windows het startmenu. Klik op het icoontje waarmee je het systeem afsluit, herstart, etc. Houd de <kbd>Shift</kbd> toets ingedrukt terwijl je op de optie om te herstarten klikt. Laat <kbd>Shift</kbd> niet los tot Windows afgesloten is. Er verschijnt uiteindelijk een menu.
 
     Om op te starten vanaf een bepaald apparaat (zoals de Ubuntu-installatie-USB) klik je op `Troubleshooting` (Problemen Oplossen), dan Geavanceerde opties, `Use a device` en kies je het apparaat vanaf waar je op wilt starten. In het geval van een USB-stick verschilt de exacte naam, maar vaak zit "USB" of de naam van de fabrikant erin.
 
