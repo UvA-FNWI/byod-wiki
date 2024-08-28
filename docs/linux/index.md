@@ -1,6 +1,6 @@
 # Linux
 
-Hier vind je informatie voor het installeren en onderhouden van Linux (specifiek: Ubuntu 22.04).
+Hier vind je informatie voor het installeren en onderhouden van Linux (specifiek: Ubuntu 24.04.1).
 
 Belangrijkste pagina's:
 
