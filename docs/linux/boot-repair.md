@@ -12,7 +12,7 @@ In plaats van binnen UEFI firmware settings kan je het ook binnen (Live) Linux d
 
 Probeer handmatig een boot entry toe te voegen met `efibootmgr`:
 ```
-efibootmgr -c -L "Grub" -l '\EFI\Grub\grubx64.efi'
+efibootmgr -c -L "Grub" -l '\EFI\Grub\shimx64.efi'
 ```
 
 Bestaat `\EFI\Grub\grubx64.efi` niet? Volg de instructies bij "Linux boot reparatie".
