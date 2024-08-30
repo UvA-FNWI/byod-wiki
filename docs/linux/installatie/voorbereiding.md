@@ -14,16 +14,7 @@ Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS g
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
 Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze aan op je computer.
 
-Download vervolgens het ISO-bestand van de laatste daily build van [Ubuntu 24.04.1](https://byod.segfault.party/noble-desktop-amd64.iso).
-
-!!! note "Geleende USB-stick?"
-    Als je een USB-stick van een van onze helpers hebt geleend, hoef je de USB-voorbereiding niet opnieuw te doen. Je kunt dan verder naar het kopje **Fast start-up uitschakelen**.
-
-!!! tip "Eduroam"
-    Zorg ervoor dat je met het wifi-netwerk `eduroam` verbonden bent als je het ISO-bestand downloadt; de open wifi is erg traag. Om met `eduroam` te verbinden kan je de tool gebruiken op [het wifi-portal](https://wifiportal.uva.nl).
-
-!!! note "Geüpdatete ISO"
-    Sinds 23 augustus gebruiken we *niet* de ISO die beschikbaar is op de Ubuntu-website (`ubuntu-24.04-desktop-amd64.iso`), maar specifiek de daily build die beschikbaar is via de link hierboven. Als je je USB-stick al voorbereid hebt met de oude ISO zul je dit helaas opnieuw moeten doen -- hiermee werken we om een [specifiek opstartprobleem](../sbat.md) heen.
+Download vervolgens het ISO-bestand van [Ubuntu 24.04.1](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true).
 
 Download het programma [Rufus](https://github.com/pbatard/rufus/releases/download/v4.4/rufus-4.4p.exe); een klein programma waarmee je de ISO naar de usb-stick kan schrijven, zonder handmatig partities te maken en bestanden te kopiëren.
 
