@@ -12,7 +12,7 @@ Bij de optie __CA certificate__ kun je klikken op "Select from file...", en dan 
 Authentication | `Tunnelled TLS` of `TTLS`
 Anonymous identity | `anonymous@uva.nl`
 Domain | `draadloos.uva.nl`
-CA certificate | `/etc/ssl/certs/USERTrust_RSA_Certification_Authority.pem` [^1]
+CA certificate | `/etc/ssl/certs/USERTrust_RSA_Certification_Authority.pem`
 Inner authentication | `MSCHAPv2 (no EAP)`
 Username | `<student ID>@uva.nl`
 Password | `<wachtwoord>`
