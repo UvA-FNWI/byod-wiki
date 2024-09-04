@@ -55,7 +55,17 @@ Open Settings (via ⚙️ in Start), en ga naar:
 !!! danger "Deze stap is belangrijk!"
     Het staat verscholen onderaan, maar het is heel belangrijk om deze instructies goed te lezen! Als je computer gebruik maakt van versleuteling en je Linux probeert te installeren, kan het zijn dat een herstelcode nodig is om weer in Windows te komen. Als je geen back-up hebt gemaakt van deze herstelcode en geen Microsoft account gebruikt, ben je alle bestanden binnen Windows kwijt! Sowieso is het niet mogelijk om Ubuntu te installeren zonder versleuteling uit te schakelen of handmatig de partitie te verkleinen.
 
-In Windows kan je via het zoekmenu de BitLocker-instellingen tevoorschijn toveren. Zoek op *BitLocker* of *device encryption* (Nederlands: *apparaatversleuteling*). Hier is in te zien of BitLocker aanstaat. Zie de pagina over [BitLocker](./bitlocker.md) voor meer informatie. Indien nodig, staat er ook wat je in dit geval moet doen.
+**BitLocker** is een versleutelingsmechanisme van Microsoft dat de informatie op opslagmedia met behulp van encryptie onleesbaar maakt. In de context van het BYOD-programma is dit problematisch aangezien we de partitie waarop Windows draait willen verkleinen - dat kan alleen vanuit Linux als de partitie niet versleuteld is.
+
+### Hoe weet ik of BitLocker ingeschakeld is?
+
+Open 'Disk Management' / 'Schijfbeheer'. Dat kan door hierop te zoeken, of je kan het vinden in het <kbd>Win</kbd>+<kbd>X</kbd> menu.
+
+Hier kijk je naar je C: schijf (en ook andere als je er meer hebt).
+
+In het blokje staat de letter (C:), de grootte en het type bestandssysteem. Als hier alleen staat 'NTFS', gebruik je geen versleuteling. Als hier staat 'NTFS (Met BitLocker versleuteld)', of iets wat erop lijkt, dan is de partitie wel versleuteld.
+
+Als BitLocker is ingeschakeld, ga dan naar [de pagina over BitLocker](./bitlocker.md) om te zien wat de vervolgstappen zijn.
 
 !!! success "Voorbereiding af"
     Als je de USB hebt voorbereid, fast start-up uit hebt geschakeld en hebt gekeken of je rekening moet houden met apparaatversleuteling, kan je verder naar [de installatie](./installatie.md).
