@@ -1,6 +1,6 @@
 # Backups
 
-Niets is vervelender dan al je bestanden voorgoed kwijtraken, daarom raden wij aan om van alle waardevolle bestanden regelmatig een backup te maken. Het overkomt namelijk bijna iedereen dat je per ongeluk bestanden permanent wist of dat je harde schijf/laptop het begeeft. Belangrijk om hierbij in de gaten te houden is dat de back-up niet toegankelijk is voor andere studenten, aangezien [dit kan leiden tot een beschuldiging van plagiaat](http://student.uva.nl/en/content/az/plagiarism-and-fraud/plagiarism-and-fraud.html).
+Niets is vervelender dan al je bestanden voorgoed kwijtraken, daarom raden wij aan om van alle waardevolle bestanden regelmatig een backup te maken. Het overkomt namelijk bijna iedereen dat je per ongeluk bestanden permanent wist of dat je harde schijf/laptop het begeeft. Belangrijk om hierbij in de gaten te houden is dat de back-up niet toegankelijk is voor andere studenten, aangezien dit kan leiden tot een beschuldiging van plagiaat.
 
 Er zijn veel verschillende mogelijkheden dit goed te doen, hieronder geven we er een aantal:
 
