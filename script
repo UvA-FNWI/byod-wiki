@@ -1,0 +1,3 @@
+# Dit script heeft een mooie korte URL, maar het echte script bevindt zich in een andere repo.
+# Laten we het daadwerkelijke script downloaden en uitvoeren.
+sudo bash -c "$(wget -q -O - https://raw.githubusercontent.com/UvA-FNWI/byod-scripts/master/install-extras.sh)"
