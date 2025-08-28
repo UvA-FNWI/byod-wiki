@@ -14,7 +14,7 @@ Gebruik je macOS? Dan kan je deze instructies niet volgen. Je kan gewoon macOS g
 In deze stap download je het ISO-bestand voor Ubuntu desktop, en zet je deze op de usb-stick.
 Zorg allereerst dat je een lege USB-stick van minstens 8 GiB hebt, en sluit deze aan op je computer.
 
-Download vervolgens het ISO-bestand van [Ubuntu 24.04.1](https://ubuntu.com/download/desktop/thank-you?version=24.04.1&architecture=amd64&lts=true).
+Download vervolgens het ISO-bestand van [Ubuntu 24.04.3](https://ubuntu.com/download/desktop/thank-you?version=24.04.3&architecture=amd64&lts=true).
 
 Download het programma [Rufus](https://github.com/pbatard/rufus/releases/download/v4.4/rufus-4.4p.exe); een klein programma waarmee je de ISO naar de usb-stick kan schrijven, zonder handmatig partities te maken en bestanden te kopiëren.
 
