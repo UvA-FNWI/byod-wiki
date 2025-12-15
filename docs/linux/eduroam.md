@@ -5,14 +5,14 @@ Klik rechtsboven in het scherm om het instellingenmenu te openen. Klap het wifi-
 
 Daarna verschijnt er een venster om de configuratie in te stellen, stel deze in zoals gegeven in de tabel hieronder.
 
-Bij de optie __CA certificate__ kun je klikken op "Select from file...", en dan naar het gegeven pad navigeren via "Other Locations" > "Computer" > "etc" > "ssl" > "certs" > "USERTrust_RSA_Certification_Authority.pem".
+Bij de optie __CA certificate__ kun je klikken op "Select from file...", en dan naar het gegeven pad navigeren via "Other Locations" > "Computer" > "etc" > "ssl" > "certs" > "Sectigo_Public_Server_Authentication_Root_R46.pem". Let op, dit certificaat is nieuw sinds 15 december 2025. Als je eerder eduroam op je laptop hebt ingesteld, moet je deze instelling mogelijk veranderen.
 
 | | |
 | - | - |
 Authentication | `Tunnelled TLS` of `TTLS`
 Anonymous identity | `anonymous@uva.nl`
-Domain | `draadloos.uva.nl`
-CA certificate | `/etc/ssl/certs/USERTrust_RSA_Certification_Authority.pem`
+Domain | `wireless.uva.nl`
+CA certificate | `/etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_R46.pem`
 Inner authentication | `MSCHAPv2 (no EAP)`
 Username | `<student ID>@uva.nl`
 Password | `<wachtwoord>`

@@ -25,7 +25,7 @@ Verbind met het `eduroam` netwerk in instellingen, zoals gewoonlijk.
 EAP method | PEAP
 EAP inner / phase2 | MSCHAPV2
 Certificate | Use system certificates
-Domain | `draadloos.uva.nl`
+Domain | `wireless.uva.nl`
 Identity | studentnummer`@uva.nl`
 Password | wachtwoord
 Anonymous identity | `anonymous@uva.nl`
@@ -36,6 +36,6 @@ ChromeOS is ongeveer hetzelfde als Android, behalve dat de domein optie opgespli
 
 | | |
 | - | -
-Domain name match | `draadloos.uva`
+Domain name match | `wireless.uva`
 Domain alternative match | (laat dit leeg)
 Domain suffix match | `nl`
