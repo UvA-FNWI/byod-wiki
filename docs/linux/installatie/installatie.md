@@ -104,6 +104,10 @@ Als alles goed is krijg je een scherm te zien waarop je de schijfruimte kunt ver
 
 ![Installation space](../../assets/2404/install-alongside-2.jpg)
 
+Bij twijfel, kies "No encryption". Door je schijf te versleutelen kunnen anderen niet bij je data als je laptop gestolen wordt. Dan denk je misschien dat je data veilig is omdat je een wachtwoord nodig hebt om in te loggen, maar het is relatief eenvoudig om dat wachtwoord aan te passen. Als je kiest om je schijf te versleutelen, heb je bij het opstarten van je laptop een tweede wachtwoord nodig. Het wachtwoord voor de versleuteling moet je absoluut niet vergeten, zonder dit wachtwoord heb je geen toegang tot je data en het is onmogelijk om dit wachtwoord aan te passen als je het niet meer weet.
+
+![Encryption](../../assets/2604/encryption.png)
+
 De laatste paar stappen wijzen zichzelf grotendeels. Een scherm met een wereldkaart zal verschijnen; op basis van de keuze van het land zal de tijdszone, valuta, decimale scheiding et cetera bepaald worden. Hierna wordt gevraagd om enige personalia en wordt een gebruikersaccount aangemaakt. Op Linux is de voorkeur om de gebruikersnaam en de computernaam in kleine letters te schrijven (bijvoorbeeld `voornaam` en `voornaam-laptop`).
 
 Daarna zal de installatie beginnen. Dit zal ongeveer een kwartier tot een uur duren afhankelijk van je laptop. Dit is een goed moment om kennis te maken met je medestudenten en, waar nodig, ze te helpen met hun Ubuntu-installatie!
