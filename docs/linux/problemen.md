@@ -185,12 +185,14 @@ apt list --installed 'linux*'
 Mainline kernels worden niet ondersteund door Canonical en zijn unsigned. Zet dus eerst secure boot uit!
 
 **Handmatige manier**
+
 1. Ga naar de [mainline kernel archive](https://kernel.ubuntu.com/~kernel-ppa/mainline/)
 2. Kies de meest recente stabiele versie
 3. Download de deb packages via de links onder "Test amd64/build succeeded". Het kan zijn dat er "failed" staat zonder downloadlinks, kies dan een oudere kernel tot je wel downloadlinks kan vinden.
 4. Installeer alle debs (bijv. via `dpkg -i *.deb`)
 
 **Via shell script**
+
 1. Download het script: `wget https://github.com/pimlie/ubuntu-mainline-kernel.sh/raw/master/ubuntu-mainline-kernel.sh`
 2. Maak executable: `chmod +x ubuntu-mainline-kernel.sh`
 3. Zoek naar kernel versies: `./ubuntu-mainline-kernel.sh -r`
