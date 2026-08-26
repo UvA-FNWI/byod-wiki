@@ -1,7 +1,7 @@
 # UvA VPN
 
 !!! failure "Multifactor authenticatie en eduVPN"
-    Vanwege wijzigingen bij ICTS (17 januari 2025) is het niet meer mogelijk om vanuit Linux met OpenConnect te verbinden met eduVPN.
+    Vanwege wijzigingen bij ICTS (17 januari 2025) is het niet meer mogelijk om vanuit Linux met OpenConnect te verbinden met UvA VPN.
 
     Gebruik [eduVPN](./eduvpn.md).
 
