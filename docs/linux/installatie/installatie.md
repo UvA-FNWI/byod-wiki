@@ -75,9 +75,9 @@ Als je wordt gevraagd om verbinding te maken met een Wi-Fi netwerk, kies ervoor 
 
 In de volgende paar schermen kun je gewoon de standaardkeuzes laten staan: _Install Ubuntu_, _Interactive installation_ en _Default selection_.
 
-![Try or Install Ubuntu => Install Ubuntu](../../assets/2404/install-ubuntu.jpg)
+![Try or Install Ubuntu => Install Ubuntu](../../assets/2604/install-ubuntu.jpg)
 
-![Type of Installation => Interactive](../../assets/2404/interactive-install.jpg)
+![Type of Installation => Interactive](../../assets/2604/interactive-install.jpg)
 
 ![Applications => Default selection](../../assets/2404/default-selection.jpg)
 
@@ -87,7 +87,7 @@ Het scherm daarna zal je vragen software van derden te installeren, vink deze aa
 
 Bij _Disk setup_ wil je kiezen voor _Install Ubuntu alongside Windows Boot Manager_.
 
-Als je deze optie niet hebt (dus alleen "erase disk" en "manual installation"), gebruik je misschien geen UEFI of is er wat anders aan de hand. Vraag om hulp aan iemand van de laptophelpdesk. Kies in ieder geval niet voor "erase disk" tenzij je zeker weet dat je al je huidige data binnen Windows wilt verwijderen.
+Als je deze optie niet hebt (dus alleen "erase disk" en "manual installation"), gebruik je misschien geen UEFI of is er wat anders aan de hand. Vraag om hulp aan iemand van de laptophelpdesk. Kies in ieder geval niet voor "erase disk" tenzij je zeker weet dat je al je huidige data en Windows wilt verwijderen.
 
 ![Disk setup => Install alongside](../../assets/2404/install-alongside.jpg)
 
@@ -106,9 +106,11 @@ Als alles goed is krijg je een scherm te zien waarop je de schijfruimte kunt ver
 
 De laatste paar stappen wijzen zichzelf grotendeels. Een scherm met een wereldkaart zal verschijnen; op basis van de keuze van het land zal de tijdszone, valuta, decimale scheiding et cetera bepaald worden. Hierna wordt gevraagd om enige personalia en wordt een gebruikersaccount aangemaakt. Op Linux is de voorkeur om de gebruikersnaam en de computernaam in kleine letters te schrijven (bijvoorbeeld `voornaam` en `voornaam-laptop`).
 
-Daarna zal de installatie beginnen. Dit zal ongeveer een kwartier tot een uur duren afhankelijk van je laptop. Als de installatie klaar is zal een dialoog verschijnen met de vraag of je wilt herstarten. Herstart het systeem.
+Daarna zal de installatie beginnen. Dit zal ongeveer een kwartier tot een uur duren afhankelijk van je laptop. Dit is een goed moment om kennis te maken met je medestudenten en, waar nodig, ze te helpen met hun Ubuntu-installatie!
 
-![install done](../../assets/2404/install-done.png)
+Als de installatie klaar is zal een dialoog verschijnen met de vraag of je wilt herstarten. Herstart het systeem.
+
+![install done](../../assets/2604/install-done.png)
 
 Tijdens het herstarten zal een melding verschijnen waarin staat dat je het installatiemedium moet verwijderen. Verwijder de USB-stick, en druk dan op de Enter-toets. Ubuntu zal dan opstarten.
 
