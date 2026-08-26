@@ -39,3 +39,9 @@ ChromeOS is ongeveer hetzelfde als Android, behalve dat de domein optie opgespli
 Domain name match | `wireless.uva`
 Domain alternative match | (laat dit leeg)
 Domain suffix match | `nl`
+
+
+## Troubleshooting
+
+1. Controleer je wachtwoord op id.uva.nl ("gegevens wijzigen")
+2. Probeer een ander MAC adres door MAC randomization aan (of juist uit) te zetten
