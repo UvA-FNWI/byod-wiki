@@ -197,3 +197,15 @@ Mainline kernels worden niet ondersteund door Canonical en zijn unsigned. Zet du
 2. Maak executable: `chmod +x ubuntu-mainline-kernel.sh`
 3. Zoek naar kernel versies: `./ubuntu-mainline-kernel.sh -r`
 4. Installeer een kernel: `./ubuntu-mainline-kernel.sh -i <versie>`
+
+### Optie "Install alongside Windows" niet beschikbaar
+
+Dit kan meerdere oorzaken hebben.
+
+#### Windows is geinstalleerd in legacy boot modus
+
+Check met fdisk "p" kijk of disklabel "gpt" (EFI) of "mbr" (BIOS) is. Om Windows te converteren, boot naar een Windows USB, doe shift+F10 om cmd te openen, check met "diskpart" en dan "print" wat de disk ID is (waarschijnlijk 0). Exit diskpart met "exit". Voer dan uit: `mbr2gpt /validate /disk:0` en als dat er goed uit ziet `mbr2gpt /convert /disk:0`.
+
+#### NTFS errors
+
+Probeer vanuit gparted de partitie te verkleinen. Lukt dat? Dan kan je ubuntu installeren met manual partitioning. Waarschijnlijk lukt het niet met de melding dat er NTFS errors zijn en je chkdsk moet draaien vanuit Windows. Reboot naar Windows, open cmd als administrator en voer uit `chkdsk /f`. Volg de instructies (rebooten).
