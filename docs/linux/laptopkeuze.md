@@ -1,6 +1,6 @@
 # Laptopkeuze
 
-Voor de opleiding dient je laptop Linux te ondersteunen. Dit is vrijwel altijd zo, maar voor sommige hardware kan het moelijker zijn. Hieronder staan een aantal punten beschreven waar je op kunt letten.
+Voor de opleiding dient je laptop Linux te ondersteunen. Bijna elke laptop origineel geleverd met Windows kan ook met Linux gebruikt worden, maar bij de ene laptop gaat dat makkelijker dan bij de ander. Hieronder staan een aantal punten waar je op kunt letten.
 
 ## Opslagruimte
 
@@ -14,7 +14,7 @@ Resoluties hoger dan 1920x1080 hebben scaling nodig zodat tekst niet te klein wo
 
 Videokaarten met hoge prestaties zijn **niet nodig** voor de opleiding. Betaal alleen meer voor een laptop met luxe videokaart als je dat zelf nodig hebt.
 
-### Intel HD graphics / Arc
+### Intel/Arc graphics
 
 Intel graphics worden goed ondersteund binnen Linux.
 
@@ -24,14 +24,12 @@ AMD videokaarten worden goed ondersteund binnen Linux.
 
 ### NVIDIA
 
-Koop liever een laptop zonder een NVIDIA videokaart, tenzij je zelf graag wil gamen met de Nvidia kaart Windows. Hieronder volgt een uitgebreide uitleg.
-
-Linux heeft wel een ingebouwde driver voor NVIDIA videokaarten (`nouveau`) maar deze is niet zo goed als de proprietary driver van NVIDIA zelf, die handmatig geïnstalleerd moet worden. Zelfs met de proprietary driver kan Linux niet automatisch de videokaart uitschakelen wanneer deze niet nodig is (dat kan Windows wel). Doordat de videokaart altijd aan staat zal je laptop een aanzienlijk kortere batterijduur hebben en eerder de ventilatoren laten draaien. Het volledig aan- of uitzetten van de videokaart heeft een reboot nodig. Als je je laptop niet gebruikt voor grafische taken, zal je in de praktijk je videokaart altijd uitegschakeld hebben. Dan is het zonde om ervoor te betalen. Een videokaart is alleen handig als je echt van plan bent om naast de studie ook je laptop te gebruiken om te gamen.
+Koop liever een laptop zonder een NVIDIA videokaart, tenzij je zelf graag wil gamen met de Nvidia kaart Windows. De Linux NVIDIA drivers zijn minder goed (vergeleken met de AMD of Intel drivers). Over het algemeen werkt het prima maar het kan zijn dat je tegen problemen aanloopt. Sowieso zal je batterij sneller leeg gaan dan bij een laptop zonder extra videokaart.
 
 ## WiFi
 
-Tegenwoordig zijn vrijwel alle WiFi-chipsets werkend te krijgen, maar chipsets van Intel werken het beste (in tegenstelling tot Realtek en Broadcom).
+Vrijwel alle WiFi-chipsets werkend te krijgen, maar chipsets van Intel werken het beste. Realtek werkt tegenwoordig ook redelijk probleemloos. Broadcom en Mediatek geven soms problemen (meestal op te lossen met speciale aandacht).
 
 ## Vingerafdrukscanners
 
-De meeste vingerafdrukscanners werken niet in Linux. Je kan [hier](https://fprint.freedesktop.org/supported-devices.html) een lijst vinden van alle modellen die ondersteund worden, maar vaak is informatie over welke scanner in een laptop gebruikt wordt moeilijk of niet te vinden. Een vingerafdrukscanner is niet essentieel, dus hier hoef je je geen zorgen om te maken.
+De meeste vingerafdrukscanners werken niet onder Linux. Je kan [hier](https://fprint.freedesktop.org/supported-devices.html) een lijst vinden van alle modellen die ondersteund worden, maar vaak is informatie over welke scanner in een laptop gebruikt wordt moeilijk of niet te vinden. Een vingerafdrukscanner is niet essentieel, dus hier hoef je je geen zorgen om te maken.
